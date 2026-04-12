@@ -1,2 +1,7 @@
 1. Explore Block elements
 2. Explore Inline Elements
+
+
+3. Understand what is "div"
+4. use inline css, and make 10 different text colored paragraph
+5. use inline css and create heading 1-6 with different background color.
