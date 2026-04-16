@@ -1,0 +1,2612 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS for Absolute Beginners 🎨</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav id="topnav">
+      <a class="nav-logo" href="#hero">CSS 🎨</a>
+      <div class="nav-links">
+        <button class="nav-link active" data-target="what-is-css">
+          What is CSS
+        </button>
+        <button class="nav-link" data-target="syntax">Syntax</button>
+        <button class="nav-link" data-target="selectors">Selectors</button>
+        <button class="nav-link" data-target="class-id">Class vs ID</button>
+        <button class="nav-link" data-target="box-model">Box Model</button>
+        <button class="nav-link" data-target="colors">Colors</button>
+        <button class="nav-link" data-target="layout">Layout</button>
+        <button class="nav-link" data-target="flexbox">Flexbox</button>
+        <button class="nav-link" data-target="grid">Grid</button>
+        <button class="nav-link" data-target="animations">Animations</button>
+        <button class="nav-link" data-target="advanced">Advanced</button>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero">
+      <div class="hero-grid"></div>
+      <div class="hero-glow"></div>
+      <div class="badge">✦ Full CSS Course · From Zero to Hero</div>
+      <h1 class="hero-title">
+        <span class="title-for">Welcome to</span>
+        <span class="title-css">CSS</span>
+        <br />
+        <span class="title-beginners">for Beginners</span>
+      </h1>
+      <p class="hero-sub">
+        Learn to style the web from scratch — with funny examples, live
+        previews, and code that actually makes sense. No boring textbooks. Just
+        CSS magic. ✨
+      </p>
+      <div class="hero-cta">
+        <a
+          href="#what-is-css"
+          class="btn btn-primary"
+          onclick="
+            document
+              .getElementById('what-is-css')
+              .scrollIntoView({ behavior: 'smooth' });
+            return false;
+          "
+        >
+          🚀 Start Learning
+        </a>
+        <a
+          href="#selectors"
+          class="btn btn-ghost"
+          onclick="
+            document
+              .getElementById('selectors')
+              .scrollIntoView({ behavior: 'smooth' });
+            return false;
+          "
+        >
+          📚 Jump to Selectors
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-num">12+</div>
+          <div class="stat-label">Topics Covered</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">30+</div>
+          <div class="stat-label">Code Examples</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">50+</div>
+          <div class="stat-label">Selectors Explained</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOPICS OVERVIEW -->
+    <section style="background: var(--bg2)">
+      <div class="section">
+        <div class="section-label">🗺️ Course Map</div>
+        <h2 class="section-title">
+          Everything you'll <span class="text-blue">learn</span>
+        </h2>
+        <p class="section-desc">
+          This course takes you from "What even is a semicolon?" to building
+          beautiful animated layouts like a pro. Click a card to jump there!
+        </p>
+        <div class="topic-grid">
+          <div
+            class="topic-card"
+            onclick="
+              document
+                .getElementById('what-is-css')
+                .scrollIntoView({ behavior: 'smooth' })
+            "
+          >
+            <div class="topic-card-icon">🤔</div>
+            <div class="topic-card-title">What is CSS?</div>
+            <div class="topic-card-desc">
+              The best analogy you'll ever hear about styling a webpage.
+            </div>
+            <span class="topic-card-badge badge-beginner">Beginner</span>
+          </div>
+          <div
+            class="topic-card"
+            onclick="
+              document
+                .getElementById('syntax')
+                .scrollIntoView({ behavior: 'smooth' })
+            "
+          >
+            <div class="topic-card-icon">📝</div>
+            <div class="topic-card-title">CSS Syntax</div>
+            <div class="topic-card-desc">
+              Rules, properties, and values — the grammar of styling.
+            </div>
+            <span class="topic-card-badge badge-beginner">Beginner</span>
+          </div>
+          <div
+            class="topic-card"
+            onclick="
+              document
+                .getElementById('selectors')
+                .scrollIntoView({ behavior: 'smooth' })
+            "
+          >
+            <div class="topic-card-icon">🎯</div>
+            <div class="topic-card-title">Selectors (All Types!)</div>
+            <div class="topic-card-desc">
+              How to point at EXACTLY the element you want to style.
+            </div>
+            <span class="topic-card-badge badge-beginner">Beginner</span>
+          </div>
+          <div
+            class="topic-card"
+            onclick="
+              document
+                .getElementById('class-id')
+                .scrollIntoView({ behavior: 'smooth' })
+            "
+          >
+            <div class="topic-card-icon">🆚</div>
+            <div class="topic-card-title">Class vs ID</div>
+            <div class="topic-card-desc">
+              The most confused topic in CSS. Explained in 60 seconds.
+            </div>
+            <span class="topic-card-badge badge-beginner">Beginner</span>
+          </div>
+          <div
+            class="topic-card"
+            onclick="
+              document
+                .getElementById('box-model')
+                .scrollIntoView({ behavior: 'smooth' })
+            "
+          >
+            <div class="topic-card-icon">📦</div>
+            <div class="topic-card-title">The Box Model</div>
+            <div class="topic-card-desc">
+              Every element is a box. Understand margin, border, padding.
+            </div>
+            <span class="topic-card-badge badge-beginner">Beginner</span>
+          </div>
+          <div
+            class="topic-card"
+            onclick="
+              document
+                .getElementById('colors')
+                .scrollIntoView({ behavior: 'smooth' })
+            "
+          >
+            <div class="topic-card-icon">🎨</div>
+            <div class="topic-card-title">Colors & Typography</div>
+            <div class="topic-card-desc">
+              Hex, RGB, HSL, fonts, sizes — make it look gorgeous.
+            </div>
+            <span class="topic-card-badge badge-beginner">Beginner</span>
+          </div>
+          <div
+            class="topic-card"
+            onclick="
+              document
+                .getElementById('layout')
+                .scrollIntoView({ behavior: 'smooth' })
+            "
+          >
+            <div class="topic-card-icon">🏗️</div>
+            <div class="topic-card-title">Display & Position</div>
+            <div class="topic-card-desc">
+              Block, inline, absolute, fixed — control where things live.
+            </div>
+            <span class="topic-card-badge badge-medium">Intermediate</span>
+          </div>
+          <div
+            class="topic-card"
+            onclick="
+              document
+                .getElementById('flexbox')
+                .scrollIntoView({ behavior: 'smooth' })
+            "
+          >
+            <div class="topic-card-icon">↔️</div>
+            <div class="topic-card-title">Flexbox</div>
+            <div class="topic-card-desc">
+              The superpower for aligning things perfectly. No more float hacks!
+            </div>
+            <span class="topic-card-badge badge-medium">Intermediate</span>
+          </div>
+          <div
+            class="topic-card"
+            onclick="
+              document
+                .getElementById('grid')
+                .scrollIntoView({ behavior: 'smooth' })
+            "
+          >
+            <div class="topic-card-icon">🔲</div>
+            <div class="topic-card-title">CSS Grid</div>
+            <div class="topic-card-desc">
+              Build complex 2D layouts like a newspaper pro.
+            </div>
+            <span class="topic-card-badge badge-medium">Intermediate</span>
+          </div>
+          <div
+            class="topic-card"
+            onclick="
+              document
+                .getElementById('animations')
+                .scrollIntoView({ behavior: 'smooth' })
+            "
+          >
+            <div class="topic-card-icon">✨</div>
+            <div class="topic-card-title">Transitions & Animations</div>
+            <div class="topic-card-desc">
+              Make things move, bounce, spin, and dazzle users.
+            </div>
+            <span class="topic-card-badge badge-medium">Intermediate</span>
+          </div>
+          <div
+            class="topic-card"
+            onclick="
+              document
+                .getElementById('advanced')
+                .scrollIntoView({ behavior: 'smooth' })
+            "
+          >
+            <div class="topic-card-icon">🔮</div>
+            <div class="topic-card-title">Advanced CSS</div>
+            <div class="topic-card-desc">
+              Variables, pseudo-elements, media queries & specificity.
+            </div>
+            <span class="topic-card-badge badge-advanced">Advanced</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- WHAT IS CSS -->
+    <section id="what-is-css">
+      <div class="section reveal">
+        <div class="section-label">Chapter 1</div>
+        <h2 class="section-title">
+          What is <span class="text-blue">CSS</span>?
+        </h2>
+        <p class="section-desc">
+          CSS stands for <strong>Cascading Style Sheets</strong>. But what does
+          that even mean? Let's use the best analogy ever:
+        </p>
+
+        <div class="callout callout-fun">
+          <div class="callout-emoji">🦸</div>
+          <div class="callout-text">
+            Think of a webpage like a <strong>person</strong>.
+            <strong>HTML</strong> is the skeleton — the bare bones structure
+            (head, body, arms, legs). <strong>CSS</strong> is the outfit,
+            makeup, haircut, and cologne. Without CSS, your webpage walks out
+            wearing nothing but its underwear. 😱
+          </div>
+        </div>
+
+        <div class="callout callout-info">
+          <div class="callout-emoji">🏠</div>
+          <div class="callout-text">
+            Another way to think about it: HTML builds the house (walls, doors,
+            windows). CSS paints it, picks the furniture colors, and adds the
+            curtains.
+            <strong
+              >Without CSS, every website would look like a notepad document
+              from 1998.</strong
+            >
+          </div>
+        </div>
+
+        <h3 style="font-size: 20px; font-weight: 700; margin: 32px 0 16px">
+          How do you add CSS?
+        </h3>
+        <p
+          style="
+            color: var(--muted);
+            margin-bottom: 20px;
+            font-size: 15px;
+            line-height: 1.6;
+          "
+        >
+          There are 3 ways to add CSS to your HTML. We'll focus on the best one:
+        </p>
+
+        <div class="steps">
+          <div class="step active">
+            <div class="step-num">1</div>
+            <div class="step-line"></div>
+            <div class="step-content">
+              <div class="step-title">
+                External CSS
+                <span
+                  style="
+                    font-size: 12px;
+                    background: rgba(86, 211, 100, 0.1);
+                    color: var(--green);
+                    padding: 2px 8px;
+                    border-radius: 4px;
+                    font-weight: 600;
+                    margin-left: 8px;
+                  "
+                  >✓ BEST</span
+                >
+              </div>
+              <div class="step-desc">
+                A separate <span class="hl">style.css</span> file linked to your
+                HTML. Used by 99% of developers. Clean and reusable.
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-line"></div>
+            <div class="step-content">
+              <div class="step-title">
+                Internal CSS
+                <span
+                  style="
+                    font-size: 12px;
+                    background: rgba(227, 179, 65, 0.1);
+                    color: var(--yellow);
+                    padding: 2px 8px;
+                    border-radius: 4px;
+                    font-weight: 600;
+                    margin-left: 8px;
+                  "
+                  >△ OK</span
+                >
+              </div>
+              <div class="step-desc">
+                CSS written inside a <span class="hl">&lt;style&gt;</span> tag
+                in your HTML <span class="hl">&lt;head&gt;</span>. Fine for
+                small projects.
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <div class="step-title">
+                Inline CSS
+                <span
+                  style="
+                    font-size: 12px;
+                    background: rgba(255, 123, 114, 0.1);
+                    color: var(--red);
+                    padding: 2px 8px;
+                    border-radius: 4px;
+                    font-weight: 600;
+                    margin-left: 8px;
+                  "
+                  >✗ AVOID</span
+                >
+              </div>
+              <div class="step-desc">
+                CSS directly in the HTML tag like
+                <span class="hl">style="color:red"</span>. It works but it's
+                like writing your grocery list on your hand. 🤦
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="code-window reveal">
+          <div class="code-titlebar">
+            <div class="code-dots">
+              <div class="dot dot-r"></div>
+              <div class="dot dot-y"></div>
+              <div class="dot dot-g"></div>
+            </div>
+            <div class="code-filename">index.html</div>
+            <div class="code-lang-badge">HTML</div>
+          </div>
+          <div class="code-body">
+            <pre><span class="ln"> 1</span>  <span class="cmt">&lt;!-- ✅ EXTERNAL (best!) - link in &lt;head&gt; --&gt;</span>
+<span class="ln"> 2</span>  <span class="ck">&lt;link</span> <span class="cp">rel</span>=<span class="cstr">"stylesheet"</span> <span class="cp">href</span>=<span class="cstr">"style.css"</span><span class="ck">&gt;</span>
+<span class="ln"> 3</span>
+<span class="ln"> 4</span>  <span class="cmt">&lt;!-- 🤷 INTERNAL - also in &lt;head&gt; --&gt;</span>
+<span class="ln"> 5</span>  <span class="ck">&lt;style&gt;</span>
+<span class="ln"> 6</span>    <span class="cs">p</span> { <span class="cp">color</span>: <span class="cc">red</span>; }
+<span class="ln"> 7</span>  <span class="ck">&lt;/style&gt;</span>
+<span class="ln"> 8</span>
+<span class="ln"> 9</span>  <span class="cmt">&lt;!-- 🚫 INLINE - writing groceries on your hand --&gt;</span>
+<span class="ln">10</span>  <span class="ck">&lt;p</span> <span class="cp">style</span>=<span class="cstr">"color: red; font-size: 20px;"</span><span class="ck">&gt;</span>Please don't do this<span class="ck">&lt;/p&gt;</span></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- CSS SYNTAX -->
+    <section id="syntax" style="background: var(--bg2)">
+      <div class="section reveal">
+        <div class="section-label">Chapter 2</div>
+        <h2 class="section-title">
+          CSS <span class="text-green">Syntax</span>
+        </h2>
+        <p class="section-desc">
+          CSS has one rule (well, many, but they all look the same). Let's
+          dissect it like a biology class, but way more fun.
+        </p>
+
+        <div class="code-window">
+          <div class="code-titlebar">
+            <div class="code-dots">
+              <div class="dot dot-r"></div>
+              <div class="dot dot-y"></div>
+              <div class="dot dot-g"></div>
+            </div>
+            <div class="code-filename">style.css — Anatomy of a CSS Rule</div>
+            <div class="code-lang-badge">CSS</div>
+          </div>
+          <div class="code-body">
+            <pre><span class="ln"> 1</span>  <span class="cmt">/*   ↓ SELECTOR   ↓ PROPERTY    ↓ VALUE  */</span>
+<span class="ln"> 2</span>  <span class="cs">     p</span>           { <span class="cp">color</span>     :   <span class="cc">tomato</span>    ; }
+<span class="ln"> 3</span>  <span class="cmt">/*             ↑              ↑           ↑
+              opening         colon      semicolon
+              brace         separates   ends the rule  */</span>
+<span class="ln"> 4</span>
+<span class="ln"> 5</span>  <span class="cmt">/* Real example — style all h1 headings */</span>
+<span class="ln"> 6</span>  <span class="cs">h1</span> {
+<span class="ln"> 7</span>    <span class="cp">color</span>: <span class="cc">#ff6b6b</span>;           <span class="cmt">/* make it red-ish */</span>
+<span class="ln"> 8</span>    <span class="cp">font-size</span>: <span class="cn">36px</span>;         <span class="cmt">/* HUGE text */</span>
+<span class="ln"> 9</span>    <span class="cp">text-align</span>: <span class="cv">center</span>;      <span class="cmt">/* centered on page */</span>
+<span class="ln">10</span>    <span class="cp">font-family</span>: <span class="cstr">'Arial'</span>, <span class="cv">sans-serif</span>;
+<span class="ln">11</span>  }</pre>
+          </div>
+        </div>
+
+        <div class="callout callout-fun">
+          <div class="callout-emoji">🍔</div>
+          <div class="callout-text">
+            CSS rules are like ordering at a restaurant:<br />
+            <strong>Selector</strong> = "Hey you, the waiter!" (who are you
+            talking to)<br />
+            <strong>Property</strong> = "I want a burger" (what to change)<br />
+            <strong>Value</strong> = "Extra cheese please" (change it to
+            what)<br />
+            The <strong>semicolon</strong> = "That's my order. Next item." Don't
+            forget it or your whole order gets confused! 😤
+          </div>
+        </div>
+
+        <h3 style="font-size: 20px; font-weight: 700; margin: 32px 0 16px">
+          Comments in CSS
+        </h3>
+
+        <div class="code-window">
+          <div class="code-titlebar">
+            <div class="code-dots">
+              <div class="dot dot-r"></div>
+              <div class="dot dot-y"></div>
+              <div class="dot dot-g"></div>
+            </div>
+            <div class="code-filename">comments.css</div>
+            <div class="code-lang-badge">CSS</div>
+          </div>
+          <div class="code-body">
+            <pre><span class="ln"> 1</span>  <span class="cmt">/* This is a comment. CSS ignores this. */</span>
+<span class="ln"> 2</span>  <span class="cmt">/* Use it to leave notes for future-you */</span>
+<span class="ln"> 3</span>  <span class="cmt">/* Future-you WILL thank present-you. Trust. */</span>
+<span class="ln"> 4</span>
+<span class="ln"> 5</span>  <span class="cs">body</span> {
+<span class="ln"> 6</span>    <span class="cp">background</span>: <span class="cc">#1a1a2e</span>;   <span class="cmt">/* dark navy - very cool */</span>
+<span class="ln"> 7</span>    <span class="cp">color</span>: <span class="cc">white</span>;            <span class="cmt">/* text visible on dark bg */</span>
+<span class="ln"> 8</span>    <span class="cmt">/* font-size: 12px; */</span>     <span class="cmt">/* commented out = disabled */</span>
+<span class="ln"> 9</span>  }</pre>
+          </div>
+        </div>
+
+        <div class="preview-window reveal">
+          <div class="preview-titlebar">
+            <div class="code-dots">
+              <div class="dot dot-r"></div>
+              <div class="dot dot-y"></div>
+              <div class="dot dot-g"></div>
+            </div>
+            <div class="preview-url">Output Preview</div>
+          </div>
+          <div class="preview-body" style="background: #1a1a2e; padding: 32px">
+            <h1
+              style="
+                color: #ff6b6b;
+                font-size: 36px;
+                text-align: center;
+                font-family: Arial, sans-serif;
+              "
+            >
+              Hello, Styled World! 🌍
+            </h1>
+            <p
+              style="
+                color: white;
+                text-align: center;
+                font-family: Arial;
+                margin-top: 10px;
+              "
+            >
+              This is what that CSS looks like rendered in a browser!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- SELECTORS -->
+    <section id="selectors">
+      <div class="section reveal">
+        <div class="section-label">Chapter 3 — The BIG One</div>
+        <h2 class="section-title">
+          CSS <span class="text-purple">Selectors</span>
+        </h2>
+        <p class="section-desc">
+          Selectors are how you tell CSS
+          <em>"yo, style THIS element."</em> They're like a sniper rifle — the
+          more specific, the more precisely you hit your target. 🎯
+        </p>
+
+        <div class="callout callout-fun">
+          <div class="callout-emoji">🎯</div>
+          <div class="callout-text">
+            Imagine you're in a classroom and the teacher says:<br />
+            <strong>"Everyone stand up"</strong> — that's a
+            <em>universal selector</em> (*)<br />
+            <strong>"All students stand up"</strong> — that's an
+            <em>element selector</em> (p, div, h1)<br />
+            <strong>"Everyone wearing a red shirt, stand up"</strong> — that's a
+            <em>class selector</em> (.red-shirt)<br />
+            <strong>"Bob specifically, stand up"</strong> — that's an
+            <em>ID selector</em> (#bob)
+          </div>
+        </div>
+
+        <h3
+          style="
+            font-size: 22px;
+            font-weight: 800;
+            margin: 36px 0 20px;
+            font-family: &quot;Syne&quot;, sans-serif;
+          "
+        >
+          🔢 How Many Selectors Are There?
+        </h3>
+        <p
+          style="
+            color: var(--muted);
+            font-size: 15px;
+            margin-bottom: 24px;
+            line-height: 1.6;
+          "
+        >
+          CSS has
+          <strong style="color: var(--accent2)">6 main categories</strong> of
+          selectors, with dozens of variations. Here's your cheat sheet:
+        </p>
+
+        <div class="selector-cards">
+          <!-- Universal -->
+          <div class="selector-card">
+            <div class="sel-type text-muted" style="color: var(--muted)">
+              Universal Selector
+            </div>
+            <div class="sel-example"><span class="text-blue">*</span></div>
+            <div class="sel-desc">
+              Selects <strong>every single element</strong> on the page.
+              Absolute power.
+            </div>
+            <div class="sel-funny">
+              👑 "EVERYONE in this building, I'm talking to YOU!"
+            </div>
+          </div>
+
+          <!-- Element -->
+          <div class="selector-card">
+            <div class="sel-type text-muted" style="color: var(--muted)">
+              Element / Type Selector
+            </div>
+            <div class="sel-example">
+              <span class="text-green">p &nbsp; h1 &nbsp; div &nbsp; span</span>
+            </div>
+            <div class="sel-desc">
+              Selects all elements of a given HTML tag type.
+            </div>
+            <div class="sel-funny">
+              🏫 "All teachers in this school, please listen up."
+            </div>
+          </div>
+
+          <!-- Class -->
+          <div class="selector-card">
+            <div class="sel-type text-muted" style="color: var(--muted)">
+              Class Selector
+            </div>
+            <div class="sel-example">
+              <span class="text-purple">.highlight &nbsp; .btn</span>
+            </div>
+            <div class="sel-desc">
+              Selects all elements with a specific
+              <span class="hl">class</span> attribute. Reusable!
+            </div>
+            <div class="sel-funny">
+              👔 "Everyone wearing the blue company t-shirt, come here."
+            </div>
+          </div>
+
+          <!-- ID -->
+          <div class="selector-card">
+            <div class="sel-type text-muted" style="color: var(--muted)">
+              ID Selector
+            </div>
+            <div class="sel-example">
+              <span class="text-red">#header &nbsp; #logo</span>
+            </div>
+            <div class="sel-desc">
+              Selects the <strong>one unique</strong> element with that ID.
+              Unique on page!
+            </div>
+            <div class="sel-funny">
+              🪪 "Sir Bob specifically. Your fingerprints match. Come forward."
+            </div>
+          </div>
+
+          <!-- Attribute -->
+          <div class="selector-card">
+            <div class="sel-type text-muted" style="color: var(--muted)">
+              Attribute Selector
+            </div>
+            <div class="sel-example">
+              <span class="text-orange">[type="text"] &nbsp; [href]</span>
+            </div>
+            <div class="sel-desc">
+              Selects elements with a specific attribute or attribute value.
+            </div>
+            <div class="sel-funny">
+              🏷️ "Everyone with a 'VIP' badge on their name tag."
+            </div>
+          </div>
+
+          <!-- Descendant -->
+          <div class="selector-card">
+            <div class="sel-type text-muted" style="color: var(--muted)">
+              Descendant Combinator
+            </div>
+            <div class="sel-example">
+              <span class="text-blue">div p &nbsp; nav a</span>
+            </div>
+            <div class="sel-desc">
+              Selects elements <strong>inside</strong> another element (any
+              depth).
+            </div>
+            <div class="sel-funny">
+              🪆 "Every kid INSIDE that house, come here." (grandkids included!)
+            </div>
+          </div>
+
+          <!-- Child -->
+          <div class="selector-card">
+            <div class="sel-type text-muted" style="color: var(--muted)">
+              Child Combinator
+            </div>
+            <div class="sel-example">
+              <span class="text-green">ul > li &nbsp; div > p</span>
+            </div>
+            <div class="sel-desc">
+              Selects <strong>direct children</strong> only. Not grandchildren!
+            </div>
+            <div class="sel-funny">
+              👨‍👧 "MY kids only. Not the neighbors' kids. Just mine."
+            </div>
+          </div>
+
+          <!-- Adjacent -->
+          <div class="selector-card">
+            <div class="sel-type text-muted" style="color: var(--muted)">
+              Adjacent Sibling
+            </div>
+            <div class="sel-example">
+              <span class="text-purple">h1 + p &nbsp; li + li</span>
+            </div>
+            <div class="sel-desc">
+              Selects the element <strong>immediately after</strong> another
+              element.
+            </div>
+            <div class="sel-funny">
+              🪑 "The person sitting right NEXT to Bob. Just that one."
+            </div>
+          </div>
+
+          <!-- General sibling -->
+          <div class="selector-card">
+            <div class="sel-type text-muted" style="color: var(--muted)">
+              General Sibling
+            </div>
+            <div class="sel-example">
+              <span class="text-orange">h1 ~ p</span>
+            </div>
+            <div class="sel-desc">
+              Selects <strong>all siblings after</strong> a specified element.
+            </div>
+            <div class="sel-funny">
+              👫 "Bob and everyone who came after Bob in the lineup."
+            </div>
+          </div>
+
+          <!-- Pseudo-class -->
+          <div class="selector-card">
+            <div class="sel-type text-muted" style="color: var(--muted)">
+              Pseudo-class
+            </div>
+            <div class="sel-example">
+              <span class="text-red"
+                >:hover &nbsp; :focus &nbsp; :nth-child()</span
+              >
+            </div>
+            <div class="sel-desc">
+              Selects elements in a <strong>special state</strong>. Mouse hover,
+              focus, etc.
+            </div>
+            <div class="sel-funny">
+              🖱️ "The button that the mouse is currently ON TOP OF. Right now.
+              That one."
+            </div>
+          </div>
+
+          <!-- Pseudo-element -->
+          <div class="selector-card">
+            <div class="sel-type text-muted" style="color: var(--muted)">
+              Pseudo-element
+            </div>
+            <div class="sel-example">
+              <span class="text-purple"
+                >::before &nbsp; ::after &nbsp; ::first-line</span
+              >
+            </div>
+            <div class="sel-desc">
+              Styles <strong>parts</strong> of elements. Even virtual content!
+            </div>
+            <div class="sel-funny">
+              🎩 "Style the hat someone is wearing. The hat doesn't exist in
+              HTML. CSS just... conjures it."
+            </div>
+          </div>
+
+          <!-- Group -->
+          <div class="selector-card">
+            <div class="sel-type text-muted" style="color: var(--muted)">
+              Grouping Selector
+            </div>
+            <div class="sel-example">
+              <span class="text-blue">h1, h2, h3, p</span>
+            </div>
+            <div class="sel-desc">
+              Apply the same styles to
+              <strong>multiple selectors at once</strong>.
+            </div>
+            <div class="sel-funny">
+              📣 "Everyone who is: a teacher, a student, OR a janitor — you're
+              all invited to pizza! 🍕"
+            </div>
+          </div>
+        </div>
+
+        <h3
+          style="
+            font-size: 22px;
+            font-weight: 800;
+            margin: 40px 0 20px;
+            font-family: &quot;Syne&quot;, sans-serif;
+          "
+        >
+          📋 Selector Quick Reference
+        </h3>
+
+        <table class="sel-table">
+          <thead>
+            <tr>
+              <th>Selector</th>
+              <th>Syntax</th>
+              <th>Example</th>
+              <th>What it does</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="emoji-col">🌎</td>
+              <td class="mono">*</td>
+              <td class="mono">* { margin: 0; }</td>
+              <td>Every element</td>
+            </tr>
+            <tr>
+              <td class="emoji-col">🏷️</td>
+              <td class="mono">element</td>
+              <td class="mono">p { color: red; }</td>
+              <td>All &lt;p&gt; tags</td>
+            </tr>
+            <tr>
+              <td class="emoji-col">🔵</td>
+              <td class="mono">.class</td>
+              <td class="mono">.card { ... }</td>
+              <td>All with class="card"</td>
+            </tr>
+            <tr>
+              <td class="emoji-col">🔴</td>
+              <td class="mono">#id</td>
+              <td class="mono">#hero { ... }</td>
+              <td>The ONE with id="hero"</td>
+            </tr>
+            <tr>
+              <td class="emoji-col">👇</td>
+              <td class="mono">A B</td>
+              <td class="mono">div p { ... }</td>
+              <td>p inside any div</td>
+            </tr>
+            <tr>
+              <td class="emoji-col">👨‍👧</td>
+              <td class="mono">A > B</td>
+              <td class="mono">ul > li { ... }</td>
+              <td>li that is a direct child of ul</td>
+            </tr>
+            <tr>
+              <td class="emoji-col">➡️</td>
+              <td class="mono">A + B</td>
+              <td class="mono">h1 + p { ... }</td>
+              <td>p immediately after h1</td>
+            </tr>
+            <tr>
+              <td class="emoji-col">⏩</td>
+              <td class="mono">A ~ B</td>
+              <td class="mono">h1 ~ p { ... }</td>
+              <td>All p after h1 (siblings)</td>
+            </tr>
+            <tr>
+              <td class="emoji-col">🖱️</td>
+              <td class="mono">:hover</td>
+              <td class="mono">a:hover { ... }</td>
+              <td>When mouse is on it</td>
+            </tr>
+            <tr>
+              <td class="emoji-col">1️⃣</td>
+              <td class="mono">:first-child</td>
+              <td class="mono">li:first-child</td>
+              <td>First child element</td>
+            </tr>
+            <tr>
+              <td class="emoji-col">🔢</td>
+              <td class="mono">:nth-child(n)</td>
+              <td class="mono">li:nth-child(2)</td>
+              <td>2nd child (any number!)</td>
+            </tr>
+            <tr>
+              <td class="emoji-col">🎭</td>
+              <td class="mono">::before</td>
+              <td class="mono">p::before</td>
+              <td>Insert content BEFORE element</td>
+            </tr>
+            <tr>
+              <td class="emoji-col">🎭</td>
+              <td class="mono">::after</td>
+              <td class="mono">p::after</td>
+              <td>Insert content AFTER element</td>
+            </tr>
+            <tr>
+              <td class="emoji-col">✅</td>
+              <td class="mono">:checked</td>
+              <td class="mono">input:checked</td>
+              <td>A checked checkbox/radio</td>
+            </tr>
+            <tr>
+              <td class="emoji-col">🚫</td>
+              <td class="mono">:not(x)</td>
+              <td class="mono">p:not(.skip)</td>
+              <td>All p EXCEPT .skip class</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3
+          style="
+            font-size: 22px;
+            font-weight: 800;
+            margin: 40px 0 16px;
+            font-family: &quot;Syne&quot;, sans-serif;
+          "
+        >
+          🔥 Selectors in Action
+        </h3>
+
+        <div class="code-window reveal">
+          <div class="code-titlebar">
+            <div class="code-dots">
+              <div class="dot dot-r"></div>
+              <div class="dot dot-y"></div>
+              <div class="dot dot-g"></div>
+            </div>
+            <div class="code-filename">selectors-demo.css</div>
+            <div class="code-lang-badge">CSS</div>
+          </div>
+          <div class="code-body">
+            <pre><span class="ln"> 1</span>  <span class="cmt">/* 🌎 Universal - reset ALL elements */</span>
+<span class="ln"> 2</span>  <span class="cs">*</span> { <span class="cp">margin</span>: <span class="cn">0</span>; <span class="cp">padding</span>: <span class="cn">0</span>; <span class="cp">box-sizing</span>: <span class="cv">border-box</span>; }
+<span class="ln"> 3</span>
+<span class="ln"> 4</span>  <span class="cmt">/* 🏷️ Element - all paragraphs look the same */</span>
+<span class="ln"> 5</span>  <span class="cs">p</span> { <span class="cp">font-size</span>: <span class="cn">16px</span>; <span class="cp">line-height</span>: <span class="cn">1.6</span>; }
+<span class="ln"> 6</span>
+<span class="ln"> 7</span>  <span class="cmt">/* 🔵 Class - reusable highlight */</span>
+<span class="ln"> 8</span>  <span class="cs">.highlight</span> { <span class="cp">background</span>: <span class="cc">yellow</span>; <span class="cp">font-weight</span>: <span class="cv">bold</span>; }
+<span class="ln"> 9</span>
+<span class="ln">10</span>  <span class="cmt">/* 🔴 ID - one-of-a-kind hero section */</span>
+<span class="ln">11</span>  <span class="cs">#hero</span> { <span class="cp">background</span>: <span class="cc">#1a1a2e</span>; <span class="cp">min-height</span>: <span class="cn">100vh</span>; }
+<span class="ln">12</span>
+<span class="ln">13</span>  <span class="cmt">/* 👇 Descendant - links inside nav only */</span>
+<span class="ln">14</span>  <span class="cs">nav a</span> { <span class="cp">color</span>: <span class="cc">white</span>; <span class="cp">text-decoration</span>: <span class="cv">none</span>; }
+<span class="ln">15</span>
+<span class="ln">16</span>  <span class="cmt">/* 🖱️ Pseudo-class - hover effect on buttons */</span>
+<span class="ln">17</span>  <span class="cs">.btn</span><span class="cpseudo">:hover</span> { <span class="cp">background</span>: <span class="cc">darkblue</span>; <span class="cp">transform</span>: <span class="cv">scale</span>(<span class="cn">1.05</span>); }
+<span class="ln">18</span>
+<span class="ln">19</span>  <span class="cmt">/* 🔢 nth-child - zebra stripe table rows */</span>
+<span class="ln">20</span>  <span class="cs">tr</span><span class="cpseudo">:nth-child(even)</span> { <span class="cp">background</span>: <span class="cc">#f5f5f5</span>; }
+<span class="ln">21</span>
+<span class="ln">22</span>  <span class="cmt">/* 🎭 Pseudo-element - add ★ before headings */</span>
+<span class="ln">23</span>  <span class="cs">h2</span><span class="cpseudo">::before</span> { <span class="cp">content</span>: <span class="cstr">"★ "</span>; <span class="cp">color</span>: <span class="cc">gold</span>; }
+<span class="ln">24</span>
+<span class="ln">25</span>  <span class="cmt">/* 🚫 :not() - style all buttons EXCEPT disabled */</span>
+<span class="ln">26</span>  <span class="cs">.btn</span><span class="cpseudo">:not(.disabled)</span> { <span class="cp">cursor</span>: <span class="cv">pointer</span>; }</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- CLASS VS ID -->
+    <section id="class-id" style="background: var(--bg2)">
+      <div class="section reveal">
+        <div class="section-label">Chapter 4</div>
+        <h2 class="section-title">
+          Class <span class="text-muted">vs</span> ID
+        </h2>
+        <p class="section-desc">
+          This trips up EVERY beginner. Let's settle it once and for all with
+          the best analogy in CSS education history.
+        </p>
+
+        <div class="callout callout-fun">
+          <div class="callout-emoji">🪪</div>
+          <div class="callout-text">
+            <strong>ID</strong> is like your <strong>passport</strong>. You're
+            the only person in the world with that passport number. ONE person.
+            ONE ID. Unique. Unrepeatable.<br /><br />
+            <strong>Class</strong> is like wearing a
+            <strong>team jersey</strong>. Thousands of people can wear the same
+            jersey number on different teams. Reusable. Shareable. Multiple
+            elements can have the same class!
+          </div>
+        </div>
+
+        <div class="compare-grid">
+          <div class="compare-card is-class">
+            <h3 style="color: var(--accent2)">. class</h3>
+            <div class="sym">🔵</div>
+            <p>
+              A class can be used on <strong>many elements</strong>. Like a
+              badge that many people can wear.
+            </p>
+            <ul>
+              <li>Reusable on multiple elements</li>
+              <li>Multiple classes on one element</li>
+              <li>Used for styling groups</li>
+              <li>Low-medium specificity</li>
+              <li>Use for components, patterns</li>
+            </ul>
+          </div>
+          <div class="compare-card is-id">
+            <h3 style="color: var(--accent)"># id</h3>
+            <div class="sym">🔴</div>
+            <p>
+              An ID can only appear <strong>once per page</strong>. Like a
+              fingerprint — totally unique.
+            </p>
+            <ul>
+              <li>Must be unique on the page</li>
+              <li>Only one ID per element</li>
+              <li>High specificity (overrides classes!)</li>
+              <li>Used for JavaScript hooks</li>
+              <li>Use sparingly — mostly for JS</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="code-window reveal">
+          <div class="code-titlebar">
+            <div class="code-dots">
+              <div class="dot dot-r"></div>
+              <div class="dot dot-y"></div>
+              <div class="dot dot-g"></div>
+            </div>
+            <div class="code-filename">class-vs-id.html + style.css</div>
+            <div class="code-lang-badge">HTML + CSS</div>
+          </div>
+          <div class="code-body">
+            <pre><span class="ln"> 1</span>  <span class="cmt">&lt;!-- HTML --&gt;</span>
+<span class="ln"> 2</span>  <span class="cmt">&lt;!-- Many buttons share the .btn class ✅ --&gt;</span>
+<span class="ln"> 3</span>  <span class="ck">&lt;button</span> <span class="cp">class</span>=<span class="cstr">"btn"</span><span class="ck">&gt;</span>Click Me<span class="ck">&lt;/button&gt;</span>
+<span class="ln"> 4</span>  <span class="ck">&lt;button</span> <span class="cp">class</span>=<span class="cstr">"btn"</span><span class="ck">&gt;</span>Me Too!<span class="ck">&lt;/button&gt;</span>
+<span class="ln"> 5</span>  <span class="ck">&lt;button</span> <span class="cp">class</span>=<span class="cstr">"btn btn-danger"</span><span class="ck">&gt;</span>Danger!<span class="ck">&lt;/button&gt;</span>
+<span class="ln"> 6</span>  <span class="cmt">&lt;!-- ↑ two classes on one element! --&gt;</span>
+<span class="ln"> 7</span>
+<span class="ln"> 8</span>  <span class="cmt">&lt;!-- ONE header with ID ✅ --&gt;</span>
+<span class="ln"> 9</span>  <span class="ck">&lt;header</span> <span class="cp">id</span>=<span class="cstr">"main-header"</span><span class="ck">&gt;</span>The One True Header<span class="ck">&lt;/header&gt;</span>
+<span class="ln">10</span>
+<span class="ln">11</span>  <span class="cmt">/* CSS */</span>
+<span class="ln">12</span>  <span class="cs">.btn</span> {                        <span class="cmt">/* styles ALL buttons */</span>
+<span class="ln">13</span>    <span class="cp">background</span>: <span class="cc">#007bff</span>; <span class="cp">color</span>: <span class="cc">white</span>;
+<span class="ln">14</span>    <span class="cp">padding</span>: <span class="cn">10px 20px</span>; <span class="cp">border-radius</span>: <span class="cn">6px</span>;
+<span class="ln">15</span>  }
+<span class="ln">16</span>  <span class="cs">.btn-danger</span> {                 <span class="cmt">/* adds red to danger button */</span>
+<span class="ln">17</span>    <span class="cp">background</span>: <span class="cc">#dc3545</span>;
+<span class="ln">18</span>  }
+<span class="ln">19</span>  <span class="cs">#main-header</span> {               <span class="cmt">/* only styles the ONE header */</span>
+<span class="ln">20</span>    <span class="cp">background</span>: <span class="cc">#1a1a2e</span>; <span class="cp">color</span>: <span class="cc">white</span>; <span class="cp">padding</span>: <span class="cn">20px</span>;
+<span class="ln">21</span>  }</pre>
+          </div>
+        </div>
+
+        <div class="preview-window">
+          <div class="preview-titlebar">
+            <div class="code-dots">
+              <div class="dot dot-r"></div>
+              <div class="dot dot-y"></div>
+              <div class="dot dot-g"></div>
+            </div>
+            <div class="preview-url">Live Output ↓</div>
+          </div>
+          <div class="preview-body" style="background: #f8f9fa">
+            <div
+              style="
+                background: #1a1a2e;
+                color: white;
+                padding: 16px;
+                font-weight: 700;
+                font-size: 18px;
+                border-radius: 6px;
+                margin-bottom: 16px;
+              "
+            >
+              The One True Header
+            </div>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap">
+              <button
+                style="
+                  background: #007bff;
+                  color: white;
+                  padding: 10px 20px;
+                  border-radius: 6px;
+                  border: none;
+                  font-size: 14px;
+                  cursor: pointer;
+                "
+              >
+                Click Me
+              </button>
+              <button
+                style="
+                  background: #007bff;
+                  color: white;
+                  padding: 10px 20px;
+                  border-radius: 6px;
+                  border: none;
+                  font-size: 14px;
+                  cursor: pointer;
+                "
+              >
+                Me Too!
+              </button>
+              <button
+                style="
+                  background: #dc3545;
+                  color: white;
+                  padding: 10px 20px;
+                  border-radius: 6px;
+                  border: none;
+                  font-size: 14px;
+                  cursor: pointer;
+                "
+              >
+                Danger! 🔥
+              </button>
+            </div>
+            <p style="margin-top: 12px; font-size: 13px; color: #666">
+              ↑ Same .btn class on all 3. .btn-danger overrides the background
+              only on button 3!
+            </p>
+          </div>
+        </div>
+
+        <div class="callout callout-warn">
+          <div class="callout-emoji">⚠️</div>
+          <div class="callout-text">
+            <strong>Rule of thumb:</strong> Use
+            <span class="hl-p">.classes</span> for styling, use
+            <span class="hl-r">#id</span>s mainly for JavaScript
+            <span class="hl">getElementById()</span>. If you find yourself using
+            #id for styling often — you're probably doing it wrong. Be a class
+            act. 😎
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- BOX MODEL -->
+    <section id="box-model">
+      <div class="section reveal">
+        <div class="section-label">Chapter 5</div>
+        <h2 class="section-title">
+          The <span class="text-orange">Box Model</span>
+        </h2>
+        <p class="section-desc">
+          This is the most important CSS concept. EVERY element on a webpage is
+          a rectangular box. Even circles are boxes with border-radius!
+        </p>
+
+        <div class="callout callout-fun">
+          <div class="callout-emoji">🎁</div>
+          <div class="callout-text">
+            Think of a gift box:<br />
+            <strong style="color: #79c0ff">Content</strong> = the actual gift
+            inside (the text, image, etc.)<br />
+            <strong style="color: #56d364">Padding</strong> = the bubble wrap
+            protecting the gift (space inside the box)<br />
+            <strong style="color: #e3b341">Border</strong> = the cardboard box
+            itself (the visible boundary)<br />
+            <strong style="color: #f78166">Margin</strong> = the empty space on
+            the shelf around the box (space outside)
+          </div>
+        </div>
+
+        <div class="box-model-visual">
+          <div class="bm-wrapper">
+            <div class="bm-margin" style="position: relative">
+              <span class="bm-label bm-m-label">MARGIN 🔴</span>
+              <div class="bm-wrapper" style="position: relative">
+                <div class="bm-border">
+                  <span class="bm-label bm-b-label">BORDER 🟡</span>
+                  <div class="bm-wrapper" style="position: relative">
+                    <div class="bm-padding">
+                      <span class="bm-label bm-p-label">PADDING 🟢</span>
+                      <div class="bm-content">Content 🔵</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="code-window reveal">
+          <div class="code-titlebar">
+            <div class="code-dots">
+              <div class="dot dot-r"></div>
+              <div class="dot dot-y"></div>
+              <div class="dot dot-g"></div>
+            </div>
+            <div class="code-filename">box-model.css</div>
+            <div class="code-lang-badge">CSS</div>
+          </div>
+          <div class="code-body">
+            <pre><span class="ln"> 1</span>  <span class="cs">.box</span> {
+<span class="ln"> 2</span>    <span class="cmt">/* 🔵 Content */</span>
+<span class="ln"> 3</span>    <span class="cp">width</span>: <span class="cn">200px</span>;
+<span class="ln"> 4</span>    <span class="cp">height</span>: <span class="cn">100px</span>;
+<span class="ln"> 5</span>
+<span class="ln"> 6</span>    <span class="cmt">/* 🟢 Padding (space INSIDE, between content & border) */</span>
+<span class="ln"> 7</span>    <span class="cp">padding</span>: <span class="cn">20px</span>;             <span class="cmt">/* all 4 sides */</span>
+<span class="ln"> 8</span>    <span class="cp">padding</span>: <span class="cn">10px 20px</span>;        <span class="cmt">/* top/bottom  left/right */</span>
+<span class="ln"> 9</span>    <span class="cp">padding-top</span>: <span class="cn">10px</span>;         <span class="cmt">/* one side only */</span>
+<span class="ln">10</span>
+<span class="ln">11</span>    <span class="cmt">/* 🟡 Border (the visible edge) */</span>
+<span class="ln">12</span>    <span class="cp">border</span>: <span class="cn">3px</span> <span class="cv">solid</span> <span class="cc">black</span>;   <span class="cmt">/* width style color */</span>
+<span class="ln">13</span>    <span class="cp">border-radius</span>: <span class="cn">8px</span>;        <span class="cmt">/* rounded corners */</span>
+<span class="ln">14</span>    <span class="cp">border-radius</span>: <span class="cn">50%</span>;        <span class="cmt">/* perfect circle! 🟢 */</span>
+<span class="ln">15</span>
+<span class="ln">16</span>    <span class="cmt">/* 🔴 Margin (space OUTSIDE, pushes other elements away) */</span>
+<span class="ln">17</span>    <span class="cp">margin</span>: <span class="cn">20px</span>;              <span class="cmt">/* all 4 sides */</span>
+<span class="ln">18</span>    <span class="cp">margin</span>: <span class="cn">0</span> <span class="cv">auto</span>;            <span class="cmt">/* center horizontally! */</span>
+<span class="ln">19</span>
+<span class="ln">20</span>    <span class="cmt">/* 🪄 box-sizing: border-box (use ALWAYS!) */</span>
+<span class="ln">21</span>    <span class="cp">box-sizing</span>: <span class="cv">border-box</span>;    <span class="cmt">/* padding+border included in width */</span>
+<span class="ln">22</span>  }</pre>
+          </div>
+        </div>
+
+        <div class="callout callout-warn">
+          <div class="callout-emoji">🧠</div>
+          <div class="callout-text">
+            <strong>Always add this to your CSS reset:</strong>
+            <span class="hl">* &#123; box-sizing: border-box; &#125;</span
+            ><br />
+            Without it, padding and border ADD to your width. A 200px wide box
+            with 20px padding becomes 240px wide. That's chaos.
+            <span class="hl">border-box</span> says "keep it 200px, squeeze the
+            content." Much saner!
+          </div>
+        </div>
+
+        <div class="preview-window">
+          <div class="preview-titlebar">
+            <div class="code-dots">
+              <div class="dot dot-r"></div>
+              <div class="dot dot-y"></div>
+              <div class="dot dot-g"></div>
+            </div>
+            <div class="preview-url">Box Model Visual Comparison</div>
+          </div>
+          <div class="preview-body">
+            <div
+              style="
+                display: flex;
+                gap: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+              "
+            >
+              <div style="text-align: center">
+                <div
+                  style="
+                    width: 120px;
+                    height: 60px;
+                    background: #e0f0ff;
+                    border: 3px solid #007bff;
+                    margin: 20px auto;
+                    padding: 12px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 12px;
+                    color: #0044aa;
+                    font-weight: 700;
+                  "
+                >
+                  Content
+                </div>
+                <p style="font-size: 12px; color: #555">
+                  With padding + border
+                </p>
+              </div>
+              <div style="text-align: center">
+                <div
+                  style="
+                    width: 80px;
+                    height: 80px;
+                    background: #ffe0e0;
+                    border: 3px solid #dc3545;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 12px;
+                    color: #8b0000;
+                    font-weight: 700;
+                  "
+                >
+                  Circle!
+                </div>
+                <p style="font-size: 12px; color: #555; margin-top: 4px">
+                  border-radius: 50%
+                </p>
+              </div>
+              <div style="text-align: center">
+                <div
+                  style="
+                    width: 120px;
+                    height: 60px;
+                    background: #e6ffe6;
+                    border: 3px dashed #28a745;
+                    margin: 10px auto;
+                    padding: 12px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 12px;
+                    color: #005500;
+                    font-weight: 700;
+                  "
+                >
+                  Dashed!
+                </div>
+                <p style="font-size: 12px; color: #555">border: dashed</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- COLORS -->
+    <section id="colors" style="background: var(--bg2)">
+      <div class="section reveal">
+        <div class="section-label">Chapter 6</div>
+        <h2 class="section-title">
+          Colors &
+          <span
+            style="
+              background: linear-gradient(
+                90deg,
+                #ff6b6b,
+                #ffa657,
+                #f7d354,
+                #56d364,
+                #79c0ff,
+                #d2a8ff
+              );
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+            "
+            >Typography</span
+          >
+        </h2>
+        <p class="section-desc">
+          CSS supports colors in 5 different formats. Pick your flavor. And text
+          styling? A whole universe.
+        </p>
+
+        <div class="code-window reveal">
+          <div class="code-titlebar">
+            <div class="code-dots">
+              <div class="dot dot-r"></div>
+              <div class="dot dot-y"></div>
+              <div class="dot dot-g"></div>
+            </div>
+            <div class="code-filename">
+              colors.css — All the Ways to Say "Red"
+            </div>
+            <div class="code-lang-badge">CSS</div>
+          </div>
+          <div class="code-body">
+            <pre><span class="ln"> 1</span>  <span class="cmt">/* All of these are the same red color: */</span>
+<span class="ln"> 2</span>
+<span class="ln"> 3</span>  <span class="cs">.box1</span> { <span class="cp">color</span>: <span class="cc">red</span>; }               <span class="cmt">/* Named color */</span>
+<span class="ln"> 4</span>  <span class="cs">.box2</span> { <span class="cp">color</span>: <span class="cc">#ff0000</span>; }          <span class="cmt">/* HEX (#rrggbb) */</span>
+<span class="ln"> 5</span>  <span class="cs">.box3</span> { <span class="cp">color</span>: <span class="cc">#f00</span>; }             <span class="cmt">/* HEX shorthand */</span>
+<span class="ln"> 6</span>  <span class="cs">.box4</span> { <span class="cp">color</span>: <span class="cv">rgb</span>(<span class="cn">255</span>, <span class="cn">0</span>, <span class="cn">0</span>); }   <span class="cmt">/* RGB 0-255 */</span>
+<span class="ln"> 7</span>  <span class="cs">.box5</span> { <span class="cp">color</span>: <span class="cv">rgba</span>(<span class="cn">255</span>, <span class="cn">0</span>, <span class="cn">0</span>, <span class="cn">0.5</span>); } <span class="cmt">/* RGBA = with opacity! */</span>
+<span class="ln"> 8</span>  <span class="cs">.box6</span> { <span class="cp">color</span>: <span class="cv">hsl</span>(<span class="cn">0</span>, <span class="cn">100%</span>, <span class="cn">50%</span>); }   <span class="cmt">/* HSL (hue,sat,light) */</span>
+<span class="ln"> 9</span>
+<span class="ln">10</span>  <span class="cmt">/* Gradients - because flat is boring 🥱 */</span>
+<span class="ln">11</span>  <span class="cs">.gradient</span> {
+<span class="ln">12</span>    <span class="cp">background</span>: <span class="cv">linear-gradient</span>(<span class="cn">135deg</span>, <span class="cc">#ff6b6b</span>, <span class="cc">#ffa657</span>);
+<span class="ln">13</span>  }
+<span class="ln">14</span>  <span class="cs">.gradient2</span> {
+<span class="ln">15</span>    <span class="cp">background</span>: <span class="cv">radial-gradient</span>(<span class="cv">circle</span>, <span class="cc">#79c0ff</span>, <span class="cc">#0d1117</span>);
+<span class="ln">16</span>  }</pre>
+          </div>
+        </div>
+
+        <div class="preview-window reveal">
+          <div class="preview-titlebar">
+            <div class="code-dots">
+              <div class="dot dot-r"></div>
+              <div class="dot dot-y"></div>
+              <div class="dot dot-g"></div>
+            </div>
+            <div class="preview-url">Color Preview</div>
+          </div>
+          <div class="preview-body">
+            <div
+              style="
+                display: flex;
+                gap: 10px;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+                padding: 10px 0;
+              "
+            >
+              <div
+                style="
+                  width: 60px;
+                  height: 60px;
+                  border-radius: 8px;
+                  background: red;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 10px;
+                  color: white;
+                  font-weight: 700;
+                "
+              >
+                red
+              </div>
+              <div
+                style="
+                  width: 60px;
+                  height: 60px;
+                  border-radius: 8px;
+                  background: #ff6b6b;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 10px;
+                  color: white;
+                  font-weight: 700;
+                "
+              >
+                #ff6b6b
+              </div>
+              <div
+                style="
+                  width: 60px;
+                  height: 60px;
+                  border-radius: 8px;
+                  background: rgba(255, 0, 0, 0.4);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 10px;
+                  color: #333;
+                  font-weight: 700;
+                "
+              >
+                rgba 40%
+              </div>
+              <div
+                style="
+                  width: 120px;
+                  height: 60px;
+                  border-radius: 8px;
+                  background: linear-gradient(135deg, #ff6b6b, #ffa657);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 10px;
+                  color: white;
+                  font-weight: 700;
+                "
+              >
+                linear-gradient
+              </div>
+              <div
+                style="
+                  width: 120px;
+                  height: 60px;
+                  border-radius: 8px;
+                  background: radial-gradient(circle, #79c0ff, #0d1117);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 10px;
+                  color: white;
+                  font-weight: 700;
+                "
+              >
+                radial-gradient
+              </div>
+              <div
+                style="
+                  width: 120px;
+                  height: 60px;
+                  border-radius: 8px;
+                  background: linear-gradient(
+                    90deg,
+                    #ff6b6b,
+                    #ffa657,
+                    #f7d354,
+                    #56d364,
+                    #79c0ff,
+                    #d2a8ff
+                  );
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 10px;
+                  color: white;
+                  font-weight: 700;
+                  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+                "
+              >
+                rainbow 🌈
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3
+          style="
+            font-size: 22px;
+            font-weight: 800;
+            margin: 36px 0 16px;
+            font-family: &quot;Syne&quot;, sans-serif;
+          "
+        >
+          ✍️ Typography
+        </h3>
+
+        <div class="code-window">
+          <div class="code-titlebar">
+            <div class="code-dots">
+              <div class="dot dot-r"></div>
+              <div class="dot dot-y"></div>
+              <div class="dot dot-g"></div>
+            </div>
+            <div class="code-filename">typography.css</div>
+            <div class="code-lang-badge">CSS</div>
+          </div>
+          <div class="code-body">
+            <pre><span class="ln"> 1</span>  <span class="cs">h1</span> {
+<span class="ln"> 2</span>    <span class="cp">font-family</span>: <span class="cstr">'Georgia'</span>, <span class="cv">serif</span>;   <span class="cmt">/* font name, fallback */</span>
+<span class="ln"> 3</span>    <span class="cp">font-size</span>: <span class="cn">3rem</span>;              <span class="cmt">/* 3x root font size (48px) */</span>
+<span class="ln"> 4</span>    <span class="cp">font-weight</span>: <span class="cn">700</span>;             <span class="cmt">/* 100(thin) → 900(black) */</span>
+<span class="ln"> 5</span>    <span class="cp">font-style</span>: <span class="cv">italic</span>;           <span class="cmt">/* or normal, oblique */</span>
+<span class="ln"> 6</span>    <span class="cp">letter-spacing</span>: <span class="cn">2px</span>;          <span class="cmt">/* space between letters */</span>
+<span class="ln"> 7</span>    <span class="cp">line-height</span>: <span class="cn">1.5</span>;             <span class="cmt">/* space between lines */</span>
+<span class="ln"> 8</span>    <span class="cp">text-align</span>: <span class="cv">center</span>;           <span class="cmt">/* left / right / center / justify */</span>
+<span class="ln"> 9</span>    <span class="cp">text-transform</span>: <span class="cv">uppercase</span>;    <span class="cmt">/* SHOUT MODE */</span>
+<span class="ln">10</span>    <span class="cp">text-decoration</span>: <span class="cv">underline</span>;   <span class="cmt">/* or none, line-through */</span>
+<span class="ln">11</span>    <span class="cp">text-shadow</span>: <span class="cn">2px 2px 4px</span> <span class="cv">rgba</span>(<span class="cn">0,0,0,0.3</span>);
+<span class="ln">12</span>  }
+<span class="ln">13</span>
+<span class="ln">14</span>  <span class="cmt">/* px vs em vs rem — the eternal debate 😅 */</span>
+<span class="ln">15</span>  <span class="cs">.px</span>   { <span class="cp">font-size</span>: <span class="cn">16px</span>; }   <span class="cmt">/* fixed pixels */</span>
+<span class="ln">16</span>  <span class="cs">.em</span>   { <span class="cp">font-size</span>: <span class="cn">1.5em</span>; }  <span class="cmt">/* relative to parent */</span>
+<span class="ln">17</span>  <span class="cs">.rem</span>  { <span class="cp">font-size</span>: <span class="cn">1.5rem</span>; } <span class="cmt">/* relative to root (html) - best! */</span>
+<span class="ln">18</span>  <span class="cs">.perc</span> { <span class="cp">font-size</span>: <span class="cn">120%</span>; }   <span class="cmt">/* percentage of parent */</span></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- DISPLAY & POSITION -->
+    <section id="layout">
+      <div class="section reveal">
+        <div class="section-label">Chapter 7</div>
+        <h2 class="section-title">
+          Display & <span class="text-yellow">Position</span>
+        </h2>
+        <p class="section-desc">
+          Before Flexbox and Grid, <span class="hl">display</span> and
+          <span class="hl">position</span> were THE layout tools. Still
+          important to know!
+        </p>
+
+        <div class="code-window">
+          <div class="code-titlebar">
+            <div class="code-dots">
+              <div class="dot dot-r"></div>
+              <div class="dot dot-y"></div>
+              <div class="dot dot-g"></div>
+            </div>
+            <div class="code-filename">display.css — The 4 Main Values</div>
+            <div class="code-lang-badge">CSS</div>
+          </div>
+          <div class="code-body">
+            <pre><span class="ln"> 1</span>  <span class="cmt">/* BLOCK: full width, stacks vertically (div, p, h1...) */</span>
+<span class="ln"> 2</span>  <span class="cs">.block</span>  { <span class="cp">display</span>: <span class="cv">block</span>; }
+<span class="ln"> 3</span>  <span class="cmt">/* 🧱 Like bricks in a wall — each one on its own row */</span>
+<span class="ln"> 4</span>
+<span class="ln"> 5</span>  <span class="cmt">/* INLINE: fits content width, flows like text (span, a...) */</span>
+<span class="ln"> 6</span>  <span class="cs">.inline</span> { <span class="cp">display</span>: <span class="cv">inline</span>; }
+<span class="ln"> 7</span>  <span class="cmt">/* 📝 Like words in a sentence — side by side */</span>
+<span class="ln"> 8</span>
+<span class="ln"> 9</span>  <span class="cmt">/* INLINE-BLOCK: inline flow BUT accepts width/height */</span>
+<span class="ln">10</span>  <span class="cs">.inline-block</span> { <span class="cp">display</span>: <span class="cv">inline-block</span>; }
+<span class="ln">11</span>  <span class="cmt">/* 🏠 Best of both worlds — side by side + sizeable */</span>
+<span class="ln">12</span>
+<span class="ln">13</span>  <span class="cmt">/* NONE: element disappears completely (still in HTML) */</span>
+<span class="ln">14</span>  <span class="cs">.hidden</span> { <span class="cp">display</span>: <span class="cv">none</span>; }
+<span class="ln">15</span>  <span class="cmt">/* 👻 The element is still in the code but invisible */</span>
+<span class="ln">16</span>
+<span class="ln">17</span>  <span class="cmt">/* vs visibility: hidden — hides but keeps the space */</span>
+<span class="ln">18</span>  <span class="cs">.invisible</span> { <span class="cp">visibility</span>: <span class="cv">hidden</span>; }
+<span class="ln">19</span>  <span class="cmt">/* 🫥 Element is invisible but still takes up space */</span></pre>
+          </div>
+        </div>
+
+        <h3 style="font-size: 20px; font-weight: 700; margin: 32px 0 16px">
+          🗺️ Positioning
+        </h3>
+
+        <div class="code-window reveal">
+          <div class="code-titlebar">
+            <div class="code-dots">
+              <div class="dot dot-r"></div>
+              <div class="dot dot-y"></div>
+              <div class="dot dot-g"></div>
+            </div>
+            <div class="code-filename">position.css</div>
+            <div class="code-lang-badge">CSS</div>
+          </div>
+          <div class="code-body">
+            <pre><span class="ln"> 1</span>  <span class="cmt">/* STATIC: Default. Goes with the normal flow. Boring. */</span>
+<span class="ln"> 2</span>  <span class="cs">.normal</span>   { <span class="cp">position</span>: <span class="cv">static</span>; }
+<span class="ln"> 3</span>
+<span class="ln"> 4</span>  <span class="cmt">/* RELATIVE: Moves relative to its NORMAL position */</span>
+<span class="ln"> 5</span>  <span class="cs">.nudged</span>   { <span class="cp">position</span>: <span class="cv">relative</span>; <span class="cp">top</span>: <span class="cn">10px</span>; <span class="cp">left</span>: <span class="cn">20px</span>; }
+<span class="ln"> 6</span>  <span class="cmt">/* 👆 "Move 10px down from where you'd normally be" */</span>
+<span class="ln"> 7</span>
+<span class="ln"> 8</span>  <span class="cmt">/* ABSOLUTE: Removed from flow, positions relative to nearest
+<span class="ln"> 9</span>              positioned ancestor (or the page) */</span>
+<span class="ln">10</span>  <span class="cs">.popup</span>    {
+<span class="ln">11</span>    <span class="cp">position</span>: <span class="cv">absolute</span>;
+<span class="ln">12</span>    <span class="cp">top</span>: <span class="cn">0</span>; <span class="cp">right</span>: <span class="cn">0</span>;  <span class="cmt">/* top-right corner of parent */</span>
+<span class="ln">13</span>  }
+<span class="ln">14</span>  <span class="cmt">/* 🎯 Like a sticker — stuck to a corner of the box */</span>
+<span class="ln">15</span>
+<span class="ln">16</span>  <span class="cmt">/* FIXED: Stays in viewport even when you scroll */</span>
+<span class="ln">17</span>  <span class="cs">.navbar</span>   { <span class="cp">position</span>: <span class="cv">fixed</span>; <span class="cp">top</span>: <span class="cn">0</span>; <span class="cp">width</span>: <span class="cn">100%</span>; }
+<span class="ln">18</span>  <span class="cmt">/* 📌 That navigation bar that follows you while scrolling */</span>
+<span class="ln">19</span>
+<span class="ln">20</span>  <span class="cmt">/* STICKY: Relative until you scroll to it, then fixed */</span>
+<span class="ln">21</span>  <span class="cs">.sticky-h</span> { <span class="cp">position</span>: <span class="cv">sticky</span>; <span class="cp">top</span>: <span class="cn">0</span>; }
+<span class="ln">22</span>  <span class="cmt">/* 🍯 Like honey — flows normally but sticks at the top */</span></pre>
+          </div>
+        </div>
+
+        <div class="callout callout-tip">
+          <div class="callout-emoji">💡</div>
+          <div class="callout-text">
+            <strong>Golden rule:</strong> For
+            <span class="hl">position: absolute</span> to work properly, its
+            parent must have <span class="hl">position: relative</span>.
+            Otherwise it positions itself relative to the entire page. It's like
+            a GPS needing a reference point!
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- FLEXBOX -->
+    <section id="flexbox" style="background: var(--bg2)">
+      <div class="section reveal">
+        <div class="section-label">Chapter 8</div>
+        <h2 class="section-title">
+          Flexbox
+          <span style="font-size: 0.6em; color: var(--muted)"
+            >— The Alignment Wizard</span
+          >
+        </h2>
+        <p class="section-desc">
+          Flexbox was a gift to web developers. Before it, centering elements
+          was a dark art that took 10 lines of CSS hacks. Now? One line.
+        </p>
+
+        <div class="callout callout-fun">
+          <div class="callout-emoji">🪄</div>
+          <div class="callout-text">
+            <strong>Before Flexbox:</strong> "How do I center a div?" — Stack
+            Overflow with 47 answers, all different, none working right.<br />
+            <strong>After Flexbox:</strong>
+            <span class="hl"
+              >display: flex; justify-content: center; align-items:
+              center;</span
+            >
+            — Done. Three lines. You're a god. 🧙
+          </div>
+        </div>
+
+        <div class="code-window">
+          <div class="code-titlebar">
+            <div class="code-dots">
+              <div class="dot dot-r"></div>
+              <div class="dot dot-y"></div>
+              <div class="dot dot-g"></div>
+            </div>
+            <div class="code-filename">flexbox.css — The Core Concepts</div>
+            <div class="code-lang-badge">CSS</div>
+          </div>
+          <div class="code-body">
+            <pre><span class="ln"> 1</span>  <span class="cs">.container</span> {
+<span class="ln"> 2</span>    <span class="cp">display</span>: <span class="cv">flex</span>;                  <span class="cmt">/* ACTIVATE FLEXBOX */</span>
+<span class="ln"> 3</span>
+<span class="ln"> 4</span>    <span class="cmt">/* ↔️ Main axis alignment */</span>
+<span class="ln"> 5</span>    <span class="cp">justify-content</span>: <span class="cv">flex-start</span>;   <span class="cmt">/* default — pack to start */</span>
+<span class="ln"> 6</span>    <span class="cp">justify-content</span>: <span class="cv">flex-end</span>;     <span class="cmt">/* pack to end */</span>
+<span class="ln"> 7</span>    <span class="cp">justify-content</span>: <span class="cv">center</span>;       <span class="cmt">/* center horizontally */</span>
+<span class="ln"> 8</span>    <span class="cp">justify-content</span>: <span class="cv">space-between</span>; <span class="cmt">/* spread with gaps */</span>
+<span class="ln"> 9</span>    <span class="cp">justify-content</span>: <span class="cv">space-around</span>;  <span class="cmt">/* equal space around each */</span>
+<span class="ln">10</span>
+<span class="ln">11</span>    <span class="cmt">/* ↕️ Cross axis alignment */</span>
+<span class="ln">12</span>    <span class="cp">align-items</span>: <span class="cv">stretch</span>;          <span class="cmt">/* default — fill height */</span>
+<span class="ln">13</span>    <span class="cp">align-items</span>: <span class="cv">center</span>;           <span class="cmt">/* center vertically */</span>
+<span class="ln">14</span>    <span class="cp">align-items</span>: <span class="cv">flex-start</span>;       <span class="cmt">/* align to top */</span>
+<span class="ln">15</span>
+<span class="ln">16</span>    <span class="cmt">/* Direction & wrapping */</span>
+<span class="ln">17</span>    <span class="cp">flex-direction</span>: <span class="cv">row</span>;            <span class="cmt">/* default — horizontal */</span>
+<span class="ln">18</span>    <span class="cp">flex-direction</span>: <span class="cv">column</span>;         <span class="cmt">/* vertical (stacked) */</span>
+<span class="ln">19</span>    <span class="cp">flex-wrap</span>: <span class="cv">wrap</span>;                <span class="cmt">/* wrap to next line */</span>
+<span class="ln">20</span>    <span class="cp">gap</span>: <span class="cn">16px</span>;                      <span class="cmt">/* space between items */</span>
+<span class="ln">21</span>  }</pre>
+          </div>
+        </div>
+
+        <h3 style="font-size: 20px; font-weight: 700; margin: 32px 0 16px">
+          🎮 Live Flex Demos
+        </h3>
+
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 20px 0;
+          "
+        >
+          <div>
+            <p
+              style="
+                font-size: 13px;
+                color: var(--muted);
+                margin-bottom: 8px;
+                font-family: &quot;Fira Code&quot;, monospace;
+              "
+            >
+              justify-content: flex-start
+            </p>
+            <div class="flex-demo">
+              <div class="flex-item">A</div>
+              <div class="flex-item">B</div>
+              <div class="flex-item">C</div>
+            </div>
+          </div>
+          <div>
+            <p
+              style="
+                font-size: 13px;
+                color: var(--muted);
+                margin-bottom: 8px;
+                font-family: &quot;Fira Code&quot;, monospace;
+              "
+            >
+              justify-content: center
+            </p>
+            <div class="flex-demo jc-center">
+              <div class="flex-item">A</div>
+              <div class="flex-item">B</div>
+              <div class="flex-item">C</div>
+            </div>
+          </div>
+          <div>
+            <p
+              style="
+                font-size: 13px;
+                color: var(--muted);
+                margin-bottom: 8px;
+                font-family: &quot;Fira Code&quot;, monospace;
+              "
+            >
+              justify-content: space-between
+            </p>
+            <div class="flex-demo jc-between">
+              <div class="flex-item">A</div>
+              <div class="flex-item">B</div>
+              <div class="flex-item">C</div>
+            </div>
+          </div>
+          <div>
+            <p
+              style="
+                font-size: 13px;
+                color: var(--muted);
+                margin-bottom: 8px;
+                font-family: &quot;Fira Code&quot;, monospace;
+              "
+            >
+              justify-content: space-around
+            </p>
+            <div class="flex-demo jc-around">
+              <div class="flex-item">A</div>
+              <div class="flex-item">B</div>
+              <div class="flex-item">C</div>
+            </div>
+          </div>
+          <div>
+            <p
+              style="
+                font-size: 13px;
+                color: var(--muted);
+                margin-bottom: 8px;
+                font-family: &quot;Fira Code&quot;, monospace;
+              "
+            >
+              flex-direction: column
+            </p>
+            <div class="flex-demo col" style="height: 120px">
+              <div class="flex-item">A</div>
+              <div class="flex-item">B</div>
+            </div>
+          </div>
+          <div>
+            <p
+              style="
+                font-size: 13px;
+                color: var(--muted);
+                margin-bottom: 8px;
+                font-family: &quot;Fira Code&quot;, monospace;
+              "
+            >
+              The Holy Grail: Perfect Center
+            </p>
+            <div class="flex-demo jc-center ai-center" style="height: 100px">
+              <div
+                class="flex-item"
+                style="
+                  background: #ffe0f0;
+                  border-color: #ff79a8;
+                  color: #8a0040;
+                "
+              >
+                Perfectly Centered! 🎯
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout callout-tip">
+          <div class="callout-emoji">🏆</div>
+          <div class="callout-text">
+            <strong>The most googled CSS question of all time answered:</strong
+            ><br />
+            To perfectly center ANYTHING:
+            <span class="hl"
+              >display: flex; justify-content: center; align-items:
+              center;</span
+            ><br />
+            Put that on the parent. Done. You're welcome. 🎉
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- GRID -->
+    <section id="grid">
+      <div class="section reveal">
+        <div class="section-label">Chapter 9</div>
+        <h2 class="section-title">CSS <span class="text-orange">Grid</span></h2>
+        <p class="section-desc">
+          Flexbox is 1D (a row or a column). Grid is 2D (rows AND columns). It's
+          like graduating from Checkers to Chess.
+        </p>
+
+        <div class="callout callout-fun">
+          <div class="callout-emoji">🏙️</div>
+          <div class="callout-text">
+            CSS Grid is like urban city planning. Flexbox is arranging furniture
+            in one room. Grid is designing the entire building with multiple
+            rooms, floors, and corridors all precisely positioned. You're
+            basically SimCity now. 🏗️
+          </div>
+        </div>
+
+        <div class="code-window">
+          <div class="code-titlebar">
+            <div class="code-dots">
+              <div class="dot dot-r"></div>
+              <div class="dot dot-y"></div>
+              <div class="dot dot-g"></div>
+            </div>
+            <div class="code-filename">grid.css</div>
+            <div class="code-lang-badge">CSS</div>
+          </div>
+          <div class="code-body">
+            <pre><span class="ln"> 1</span>  <span class="cs">.grid-container</span> {
+<span class="ln"> 2</span>    <span class="cp">display</span>: <span class="cv">grid</span>;
+<span class="ln"> 3</span>
+<span class="ln"> 4</span>    <span class="cmt">/* Define columns — 3 equal columns */</span>
+<span class="ln"> 5</span>    <span class="cp">grid-template-columns</span>: <span class="cn">1fr 1fr 1fr</span>;   <span class="cmt">/* fr = fraction */</span>
+<span class="ln"> 6</span>    <span class="cp">grid-template-columns</span>: <span class="cv">repeat</span>(<span class="cn">3</span>, <span class="cn">1fr</span>); <span class="cmt">/* same as above! */</span>
+<span class="ln"> 7</span>    <span class="cp">grid-template-columns</span>: <span class="cn">2fr 1fr</span>;       <span class="cmt">/* 2/3 then 1/3 */</span>
+<span class="ln"> 8</span>    <span class="cp">grid-template-columns</span>: <span class="cn">200px auto 1fr</span>; <span class="cmt">/* mixed! */</span>
+<span class="ln"> 9</span>
+<span class="ln">10</span>    <span class="cmt">/* Define rows */</span>
+<span class="ln">11</span>    <span class="cp">grid-template-rows</span>: <span class="cn">100px auto 60px</span>;
+<span class="ln">12</span>
+<span class="ln">13</span>    <span class="cp">gap</span>: <span class="cn">16px</span>;                            <span class="cmt">/* gap between cells */</span>
+<span class="ln">14</span>  }
+<span class="ln">15</span>
+<span class="ln">16</span>  <span class="cmt">/* Make an item span multiple columns! */</span>
+<span class="ln">17</span>  <span class="cs">.header-item</span> { <span class="cp">grid-column</span>: <span class="cv">span</span> <span class="cn">3</span>; }  <span class="cmt">/* takes 3 cols */</span>
+<span class="ln">18</span>  <span class="cs">.sidebar</span>     { <span class="cp">grid-row</span>: <span class="v">span</span> <span class="cn">2</span>; }      <span class="cmt">/* takes 2 rows */</span>
+<span class="ln">19</span>
+<span class="ln">20</span>  <span class="cmt">/* Responsive grid magic! */</span>
+<span class="ln">21</span>  <span class="cs">.auto-grid</span> {
+<span class="ln">22</span>    <span class="cp">grid-template-columns</span>: <span class="cv">repeat</span>(<span class="cv">auto-fill</span>, <span class="cv">minmax</span>(<span class="cn">200px</span>, <span class="cn">1fr</span>));
+<span class="ln">23</span>    <span class="cmt">/* 🤯 Auto-fits as many 200px columns as will fit! */</span>
+<span class="ln">24</span>  }</pre>
+          </div>
+        </div>
+
+        <h3 style="font-size: 20px; font-weight: 700; margin: 28px 0 16px">
+          🎮 Live Grid Demos
+        </h3>
+
+        <div style="margin: 20px 0">
+          <p
+            style="
+              font-size: 13px;
+              color: var(--muted);
+              margin-bottom: 8px;
+              font-family: &quot;Fira Code&quot;, monospace;
+            "
+          >
+            grid-template-columns: repeat(3, 1fr)
+          </p>
+          <div class="grid-demo g23">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div>
+            <div class="grid-item">5</div>
+            <div class="grid-item">6</div>
+          </div>
+        </div>
+
+        <div style="margin: 20px 0">
+          <p
+            style="
+              font-size: 13px;
+              color: var(--muted);
+              margin-bottom: 8px;
+              font-family: &quot;Fira Code&quot;, monospace;
+            "
+          >
+            grid-column: span 2 (spanning cells)
+          </p>
+          <div class="grid-demo g23">
+            <div class="grid-item span2">Header — spans 2 columns 👑</div>
+            <div class="grid-item">Sidebar</div>
+            <div class="grid-item">Content</div>
+            <div class="grid-item">Content</div>
+            <div class="grid-item span2">Footer — also spans 2 👇</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ANIMATIONS -->
+    <section id="animations" style="background: var(--bg2)">
+      <div class="section reveal">
+        <div class="section-label">Chapter 10 — The Fun Part</div>
+        <h2 class="section-title">
+          Transitions &
+          <span
+            style="
+              background: linear-gradient(90deg, #79c0ff, #d2a8ff, #ff79a8);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+            "
+            >Animations</span
+          >
+        </h2>
+        <p class="section-desc">
+          This is where CSS goes from "making stuff look pretty" to "making
+          stuff come alive." Buckle up! 🎢
+        </p>
+
+        <h3 style="font-size: 20px; font-weight: 700; margin: 0 0 16px">
+          🌊 Transitions — Smooth Property Changes
+        </h3>
+
+        <div class="code-window">
+          <div class="code-titlebar">
+            <div class="code-dots">
+              <div class="dot dot-r"></div>
+              <div class="dot dot-y"></div>
+              <div class="dot dot-g"></div>
+            </div>
+            <div class="code-filename">transitions.css</div>
+            <div class="code-lang-badge">CSS</div>
+          </div>
+          <div class="code-body">
+            <pre><span class="ln"> 1</span>  <span class="cs">.button</span> {
+<span class="ln"> 2</span>    <span class="cp">background</span>: <span class="cc">#007bff</span>;
+<span class="ln"> 3</span>
+<span class="ln"> 4</span>    <span class="cmt">/* transition: property  duration  timing-function  delay */</span>
+<span class="ln"> 5</span>    <span class="cp">transition</span>: <span class="cv">background</span> <span class="cn">0.3s</span> <span class="cv">ease</span>;
+<span class="ln"> 6</span>
+<span class="ln"> 7</span>    <span class="cmt">/* Transition multiple properties: */</span>
+<span class="ln"> 8</span>    <span class="cp">transition</span>: <span class="cv">all</span> <span class="cn">0.3s</span> <span class="cv">ease</span>;      <span class="cmt">/* transition EVERYTHING */</span>
+<span class="ln"> 9</span>    <span class="cp">transition</span>:
+<span class="ln">10</span>      <span class="cv">background</span> <span class="cn">0.3s</span> <span class="cv">ease</span>,
+<span class="ln">11</span>      <span class="cv">transform</span>  <span class="cn">0.2s</span> <span class="cv">ease-out</span>;   <span class="cmt">/* two separate transitions */</span>
+<span class="ln">12</span>  }
+<span class="ln">13</span>
+<span class="ln">14</span>  <span class="cs">.button</span><span class="cpseudo">:hover</span> {
+<span class="ln">15</span>    <span class="cp">background</span>: <span class="cc">#0056b3</span>;           <span class="cmt">/* smoothly changes color */</span>
+<span class="ln">16</span>    <span class="cp">transform</span>: <span class="cv">scale</span>(<span class="cn">1.05</span>);         <span class="cmt">/* smoothly scales up */</span>
+<span class="ln">17</span>    <span class="cp">box-shadow</span>: <span class="cn">0 8px 25px</span> <span class="cv">rgba</span>(<span class="cn">0,91,255,0.4</span>);
+<span class="ln">18</span>  }
+<span class="ln">19</span>
+<span class="ln">20</span>  <span class="cmt">/* timing functions: ease / linear / ease-in / ease-out / ease-in-out */</span>
+<span class="ln">21</span>  <span class="cmt">/* ease = slow start, fast middle, slow end (most natural) */</span></pre>
+          </div>
+        </div>
+
+        <h3 style="font-size: 20px; font-weight: 700; margin: 32px 0 16px">
+          🎬 Keyframe Animations — Full Control
+        </h3>
+
+        <div class="code-window reveal">
+          <div class="code-titlebar">
+            <div class="code-dots">
+              <div class="dot dot-r"></div>
+              <div class="dot dot-y"></div>
+              <div class="dot dot-g"></div>
+            </div>
+            <div class="code-filename">animations.css</div>
+            <div class="code-lang-badge">CSS</div>
+          </div>
+          <div class="code-body">
+            <pre><span class="ln"> 1</span>  <span class="cmt">/* Step 1: Define the animation with @keyframes */</span>
+<span class="ln"> 2</span>  <span class="ck">@keyframes</span> <span class="cs">bounce</span> {
+<span class="ln"> 3</span>    <span class="cn">0%</span>   { <span class="cp">transform</span>: <span class="cv">translateY</span>(<span class="cn">0px</span>); }
+<span class="ln"> 4</span>    <span class="cn">50%</span>  { <span class="cp">transform</span>: <span class="cv">translateY</span>(<span class="cn">-30px</span>); }
+<span class="ln"> 5</span>    <span class="cn">100%</span> { <span class="cp">transform</span>: <span class="cv">translateY</span>(<span class="cn">0px</span>); }
+<span class="ln"> 6</span>  }
+<span class="ln"> 7</span>
+<span class="ln"> 8</span>  <span class="ck">@keyframes</span> <span class="cs">spin</span> {
+<span class="ln"> 9</span>    <span class="cn">from</span> { <span class="cp">transform</span>: <span class="cv">rotate</span>(<span class="cn">0deg</span>); }
+<span class="ln">10</span>    <span class="cn">to</span>   { <span class="cp">transform</span>: <span class="cv">rotate</span>(<span class="cn">360deg</span>); }
+<span class="ln">11</span>  }
+<span class="ln">12</span>
+<span class="ln">13</span>  <span class="ck">@keyframes</span> <span class="cs">fadeIn</span> {
+<span class="ln">14</span>    <span class="cn">from</span> { <span class="cp">opacity</span>: <span class="cn">0</span>; <span class="cp">transform</span>: <span class="cv">translateY</span>(<span class="cn">20px</span>); }
+<span class="ln">15</span>    <span class="cn">to</span>   { <span class="cp">opacity</span>: <span class="cn">1</span>; <span class="cp">transform</span>: <span class="cv">translateY</span>(<span class="cn">0</span>); }
+<span class="ln">16</span>  }
+<span class="ln">17</span>
+<span class="ln">18</span>  <span class="cmt">/* Step 2: Apply the animation */</span>
+<span class="ln">19</span>  <span class="cs">.ball</span> {
+<span class="ln">20</span>    <span class="cp">animation</span>: <span class="cv">bounce</span> <span class="cn">0.8s</span> <span class="cv">ease</span> <span class="cv">infinite</span> <span class="cv">alternate</span>;
+<span class="ln">21</span>    <span class="cmt">/*       name    duration  timing  iteration direction */</span>
+<span class="ln">22</span>  }
+<span class="ln">23</span>  <span class="cs">.loader</span> { <span class="cp">animation</span>: <span class="cv">spin</span> <span class="cn">1s</span> <span class="cv">linear</span> <span class="cv">infinite</span>; }
+<span class="ln">24</span>  <span class="cs">.card</span>   { <span class="cp">animation</span>: <span class="cv">fadeIn</span> <span class="cn">0.5s</span> <span class="cv">ease</span> <span class="cn">0.2s</span> <span class="cv">both</span>; }
+<span class="ln">25</span>  <span class="cmt">/*                                       ↑ 0.2s delay */</span></pre>
+          </div>
+        </div>
+
+        <h3 style="font-size: 18px; font-weight: 700; margin: 28px 0 16px">
+          🎪 Live Demos
+        </h3>
+        <div class="anim-demos">
+          <div class="anim-demo-item">
+            <div
+              class="anim-spin"
+              style="
+                width: 60px;
+                height: 60px;
+                background: linear-gradient(135deg, #79c0ff, #d2a8ff);
+                border-radius: 10px;
+                animation: demoSpin 3s linear infinite;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 24px;
+              "
+            >
+              ⚙️
+            </div>
+            <div class="anim-demo-label">spin</div>
+          </div>
+          <div class="anim-demo-item">
+            <div class="anim-bounce"></div>
+            <div class="anim-demo-label">bounce</div>
+          </div>
+          <div class="anim-demo-item">
+            <div class="anim-pulse-box">💓</div>
+            <div class="anim-demo-label">pulse</div>
+          </div>
+          <div class="anim-demo-item">
+            <div
+              style="
+                width: 60px;
+                height: 60px;
+                background: linear-gradient(135deg, #ffa657, #ff6b6b);
+                border-radius: 50%;
+                animation: demoFloat 2s ease-in-out infinite;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 24px;
+              "
+            >
+              🎈
+            </div>
+            <div class="anim-demo-label">float</div>
+          </div>
+          <div class="anim-demo-item">
+            <div
+              style="
+                width: 60px;
+                height: 60px;
+                background: linear-gradient(135deg, #56d364, #79c0ff);
+                border-radius: 10px;
+                animation: demoShake 0.5s ease infinite;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 24px;
+              "
+            >
+              🎲
+            </div>
+            <div class="anim-demo-label">wiggle</div>
+          </div>
+        </div>
+        <style>
+          @keyframes demoFloat {
+            0%,
+            100% {
+              transform: translateY(0);
+            }
+            50% {
+              transform: translateY(-15px);
+            }
+          }
+          @keyframes demoShake {
+            0%,
+            100% {
+              transform: rotate(0deg);
+            }
+            25% {
+              transform: rotate(-8deg);
+            }
+            75% {
+              transform: rotate(8deg);
+            }
+          }
+        </style>
+
+        <div class="callout callout-tip">
+          <div class="callout-emoji">⚡</div>
+          <div class="callout-text">
+            For best performance, only animate
+            <span class="hl">transform</span> and
+            <span class="hl">opacity</span>. These are GPU-accelerated and silky
+            smooth. Animating <span class="hl">width</span>,
+            <span class="hl">height</span>, or
+            <span class="hl">margin</span> causes layout recalculations and can
+            make your page feel laggy. Don't animate expensive properties if you
+            want 60fps magic! 🎯
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ADVANCED CSS -->
+    <section id="advanced">
+      <div class="section reveal">
+        <div class="section-label">Chapter 11 — You Made It! 🏆</div>
+        <h2 class="section-title">
+          Advanced <span class="text-purple">CSS</span>
+        </h2>
+        <p class="section-desc">
+          You've leveled up. Time for CSS Variables, Pseudo-elements,
+          Specificity, and Media Queries. This is where you become dangerous. 😈
+        </p>
+
+        <!-- CSS VARIABLES -->
+        <h3
+          style="
+            font-size: 22px;
+            font-weight: 800;
+            margin: 0 0 16px;
+            font-family: &quot;Syne&quot;, sans-serif;
+          "
+        >
+          🧪 CSS Custom Properties (Variables)
+        </h3>
+
+        <div class="callout callout-fun">
+          <div class="callout-emoji">🎨</div>
+          <div class="callout-text">
+            CSS variables are like a paint palette. Instead of writing
+            <span class="hl">#ff6b6b</span> 50 times in your stylesheet and then
+            having to change it 50 times when the designer says "actually make
+            it coral", you define
+            <span class="hl">--brand-color: #ff6b6b</span> once and use it
+            everywhere. Change it ONCE. Updates everywhere. You're basically a
+            wizard now. 🧙‍♂️
+          </div>
+        </div>
+
+        <div class="code-window reveal">
+          <div class="code-titlebar">
+            <div class="code-dots">
+              <div class="dot dot-r"></div>
+              <div class="dot dot-y"></div>
+              <div class="dot dot-g"></div>
+            </div>
+            <div class="code-filename">
+              variables.css — CSS Custom Properties
+            </div>
+            <div class="code-lang-badge">CSS</div>
+          </div>
+          <div class="code-body">
+            <pre><span class="ln"> 1</span>  <span class="cmt">/* Define variables on :root (global scope) */</span>
+<span class="ln"> 2</span>  <span class="cs">:root</span> {
+<span class="ln"> 3</span>    <span class="cp">--brand-color</span>:  <span class="cc">#007bff</span>;
+<span class="ln"> 4</span>    <span class="cp">--danger-color</span>: <span class="cc">#dc3545</span>;
+<span class="ln"> 5</span>    <span class="cp">--font-size-lg</span>: <span class="cn">1.25rem</span>;
+<span class="ln"> 6</span>    <span class="cp">--border-radius</span>: <span class="cn">8px</span>;
+<span class="ln"> 7</span>    <span class="cp">--spacing</span>: <span class="cn">16px</span>;
+<span class="ln"> 8</span>  }
+<span class="ln"> 9</span>
+<span class="ln">10</span>  <span class="cmt">/* Use them with var() */</span>
+<span class="ln">11</span>  <span class="cs">.button</span> {
+<span class="ln">12</span>    <span class="cp">background</span>: <span class="cv">var</span>(<span class="cp">--brand-color</span>);
+<span class="ln">13</span>    <span class="cp">border-radius</span>: <span class="cv">var</span>(<span class="cp">--border-radius</span>);
+<span class="ln">14</span>    <span class="cp">padding</span>: <span class="cv">var</span>(<span class="cp">--spacing</span>);
+<span class="ln">15</span>  }
+<span class="ln">16</span>
+<span class="ln">17</span>  <span class="cmt">/* Dark mode with just variable overrides! */</span>
+<span class="ln">18</span>  <span class="cs">[data-theme="dark"]</span> {
+<span class="ln">19</span>    <span class="cp">--brand-color</span>: <span class="cc">#60a5fa</span>;    <span class="cmt">/* lighter for dark bg */</span>
+<span class="ln">20</span>    <span class="cp">--text-color</span>: <span class="cc">#f1f5f9</span>;
+<span class="ln">21</span>    <span class="cp">--bg-color</span>: <span class="cc">#0f172a</span>;
+<span class="ln">22</span>  }
+<span class="ln">23</span>  <span class="cmt">/* 🤯 That's your dark mode toggle. Just change the variables. */</span></pre>
+          </div>
+        </div>
+
+        <!-- SPECIFICITY -->
+        <h3
+          style="
+            font-size: 22px;
+            font-weight: 800;
+            margin: 40px 0 16px;
+            font-family: &quot;Syne&quot;, sans-serif;
+          "
+        >
+          ⚔️ Specificity — Who Wins the Style War?
+        </h3>
+
+        <div class="callout callout-fun">
+          <div class="callout-emoji">🥊</div>
+          <div class="callout-text">
+            When two CSS rules target the same element,
+            <strong>Specificity</strong> determines who wins. Think of it like a
+            boxing match — each selector has a power level. Higher power = wins
+            the fight = styles get applied.
+          </div>
+        </div>
+
+        <div class="spec-pyramid">
+          <p
+            style="
+              font-size: 12px;
+              color: var(--muted);
+              margin-bottom: 8px;
+              letter-spacing: 1px;
+              text-transform: uppercase;
+            "
+          >
+            WEAKEST ↓↓↓ STRONGEST
+          </p>
+          <div class="spec-row spec-row-5">
+            <span>* (Universal)</span>
+            <span class="spec-score">Score: 0</span>
+          </div>
+          <div class="spec-row spec-row-4">
+            <span>element / p / h1 / div</span>
+            <span class="spec-score">Score: 1</span>
+          </div>
+          <div class="spec-row spec-row-3">
+            <span>.class / :hover / [attr]</span>
+            <span class="spec-score">Score: 10</span>
+          </div>
+          <div class="spec-row spec-row-2">
+            <span>#id selector</span>
+            <span class="spec-score">Score: 100</span>
+          </div>
+          <div class="spec-row spec-row-1">
+            <span>style="" inline CSS / !important ⚠️</span>
+            <span class="spec-score">Score: 1000</span>
+          </div>
+          <p
+            style="
+              font-size: 12px;
+              color: var(--muted);
+              margin-top: 8px;
+              letter-spacing: 1px;
+              text-transform: uppercase;
+            "
+          >
+            STRONGEST ↑↑↑
+          </p>
+        </div>
+
+        <div class="callout callout-warn">
+          <div class="callout-emoji">🚨</div>
+          <div class="callout-text">
+            About <span class="hl">!important</span>: It nukes specificity rules
+            and forces a style to win. It feels like a cheat code but using it
+            makes your CSS impossible to maintain. Future-you will cry. Only use
+            it as a last resort. Like calling your mum to fix your code.
+            Effective but embarrassing. 😅
+          </div>
+        </div>
+
+        <!-- PSEUDO ELEMENTS -->
+        <h3
+          style="
+            font-size: 22px;
+            font-weight: 800;
+            margin: 40px 0 16px;
+            font-family: &quot;Syne&quot;, sans-serif;
+          "
+        >
+          🎭 Pseudo-Elements — Conjuring Content
+        </h3>
+
+        <div class="code-window reveal">
+          <div class="code-titlebar">
+            <div class="code-dots">
+              <div class="dot dot-r"></div>
+              <div class="dot dot-y"></div>
+              <div class="dot dot-g"></div>
+            </div>
+            <div class="code-filename">pseudo-elements.css</div>
+            <div class="code-lang-badge">CSS</div>
+          </div>
+          <div class="code-body">
+            <pre><span class="ln"> 1</span>  <span class="cmt">/* ::before — insert content BEFORE element */</span>
+<span class="ln"> 2</span>  <span class="cs">h2</span><span class="cpseudo">::before</span> {
+<span class="ln"> 3</span>    <span class="cp">content</span>: <span class="cstr">"🔥 "</span>;      <span class="cmt">/* REQUIRED — even if empty */</span>
+<span class="ln"> 4</span>    <span class="cp">color</span>: <span class="cc">gold</span>;
+<span class="ln"> 5</span>  }
+<span class="ln"> 6</span>
+<span class="ln"> 7</span>  <span class="cmt">/* ::after — great for decorative elements */</span>
+<span class="ln"> 8</span>  <span class="cs">.badge</span><span class="cpseudo">::after</span> {
+<span class="ln"> 9</span>    <span class="cp">content</span>: <span class="cstr">" ✓"</span>;
+<span class="ln">10</span>    <span class="cp">color</span>: <span class="cc">green</span>;
+<span class="ln">11</span>  }
+<span class="ln">12</span>
+<span class="ln">13</span>  <span class="cmt">/* ::first-letter — big drop cap! */</span>
+<span class="ln">14</span>  <span class="cs">p</span><span class="cpseudo">::first-letter</span> {
+<span class="ln">15</span>    <span class="cp">font-size</span>: <span class="cn">3em</span>;
+<span class="ln">16</span>    <span class="cp">float</span>: <span class="cv">left</span>;
+<span class="ln">17</span>    <span class="cp">color</span>: <span class="cc">#007bff</span>;
+<span class="ln">18</span>  }
+<span class="ln">19</span>
+<span class="ln">20</span>  <span class="cmt">/* Cool trick: underline animation with ::after */</span>
+<span class="ln">21</span>  <span class="cs">.link</span> { <span class="cp">position</span>: <span class="cv">relative</span>; }
+<span class="ln">22</span>  <span class="cs">.link</span><span class="cpseudo">::after</span> {
+<span class="ln">23</span>    <span class="cp">content</span>: <span class="cstr">""</span>;           <span class="cmt">/* empty but required! */</span>
+<span class="ln">24</span>    <span class="cp">position</span>: <span class="cv">absolute</span>;
+<span class="ln">25</span>    <span class="cp">bottom</span>: <span class="cn">-2px</span>; <span class="cp">left</span>: <span class="cn">0</span>;
+<span class="ln">26</span>    <span class="cp">width</span>: <span class="cn">0</span>; <span class="cp">height</span>: <span class="cn">2px</span>;
+<span class="ln">27</span>    <span class="cp">background</span>: <span class="cc">#007bff</span>;
+<span class="ln">28</span>    <span class="cp">transition</span>: <span class="cv">width</span> <span class="cn">0.3s</span> <span class="cv">ease</span>;
+<span class="ln">29</span>  }
+<span class="ln">30</span>  <span class="cs">.link</span><span class="cpseudo">:hover</span><span class="cpseudo">::after</span> {
+<span class="ln">31</span>    <span class="cp">width</span>: <span class="cn">100%</span>;            <span class="cmt">/* line slides in on hover! */</span>
+<span class="ln">32</span>  }</pre>
+          </div>
+        </div>
+
+        <!-- MEDIA QUERIES -->
+        <h3
+          style="
+            font-size: 22px;
+            font-weight: 800;
+            margin: 40px 0 16px;
+            font-family: &quot;Syne&quot;, sans-serif;
+          "
+        >
+          📱 Media Queries — Responsive Design
+        </h3>
+
+        <div class="callout callout-info">
+          <div class="callout-emoji">📱</div>
+          <div class="callout-text">
+            Media Queries let CSS say:
+            <strong
+              >"If the screen is smaller than 768px, do THIS instead."</strong
+            >
+            It's how you make one website that looks great on a 4K monitor AND a
+            budget Android phone. Desktop, tablet, phone — one CSS file to rule
+            them all.
+          </div>
+        </div>
+
+        <div class="mq-visual">
+          <div class="mq-device">
+            <div class="mq-screen mq-phone">📱<br />Mobile<br />&lt;768px</div>
+            <div class="mq-label">1 column</div>
+          </div>
+          <div class="mq-device">
+            <div class="mq-screen mq-tablet">
+              💻<br />Tablet<br />&lt;1024px
+            </div>
+            <div class="mq-label">2 columns</div>
+          </div>
+          <div class="mq-device">
+            <div class="mq-screen mq-desktop">
+              🖥️<br />Desktop<br />&gt;1024px
+            </div>
+            <div class="mq-label">3+ columns</div>
+          </div>
+        </div>
+
+        <div class="code-window reveal">
+          <div class="code-titlebar">
+            <div class="code-dots">
+              <div class="dot dot-r"></div>
+              <div class="dot dot-y"></div>
+              <div class="dot dot-g"></div>
+            </div>
+            <div class="code-filename">
+              responsive.css — Mobile First Approach
+            </div>
+            <div class="code-lang-badge">CSS</div>
+          </div>
+          <div class="code-body">
+            <pre><span class="ln"> 1</span>  <span class="cmt">/* MOBILE FIRST: Start with mobile styles */</span>
+<span class="ln"> 2</span>  <span class="cs">.grid</span> {
+<span class="ln"> 3</span>    <span class="cp">display</span>: <span class="cv">grid</span>;
+<span class="ln"> 4</span>    <span class="cp">grid-template-columns</span>: <span class="cn">1fr</span>;   <span class="cmt">/* 1 column on mobile */</span>
+<span class="ln"> 5</span>  }
+<span class="ln"> 6</span>
+<span class="ln"> 7</span>  <span class="cmt">/* TABLET: 768px and up */</span>
+<span class="ln"> 8</span>  <span class="ck">@media</span> (<span class="cp">min-width</span>: <span class="cn">768px</span>) {
+<span class="ln"> 9</span>    <span class="cs">.grid</span> {
+<span class="ln">10</span>      <span class="cp">grid-template-columns</span>: <span class="cv">repeat</span>(<span class="cn">2</span>, <span class="cn">1fr</span>); <span class="cmt">/* 2 cols */</span>
+<span class="ln">11</span>    }
+<span class="ln">12</span>    <span class="cs">h1</span> { <span class="cp">font-size</span>: <span class="cn">2.5rem</span>; }
+<span class="ln">13</span>  }
+<span class="ln">14</span>
+<span class="ln">15</span>  <span class="cmt">/* DESKTOP: 1024px and up */</span>
+<span class="ln">16</span>  <span class="ck">@media</span> (<span class="cp">min-width</span>: <span class="cn">1024px</span>) {
+<span class="ln">17</span>    <span class="cs">.grid</span> {
+<span class="ln">18</span>      <span class="cp">grid-template-columns</span>: <span class="cv">repeat</span>(<span class="cn">3</span>, <span class="cn">1fr</span>); <span class="cmt">/* 3 cols */</span>
+<span class="ln">19</span>    }
+<span class="ln">20</span>    <span class="cs">h1</span> { <span class="cp">font-size</span>: <span class="cn">4rem</span>; }
+<span class="ln">21</span>  }
+<span class="ln">22</span>
+<span class="ln">23</span>  <span class="cmt">/* Also: prefers-color-scheme for system dark mode */</span>
+<span class="ln">24</span>  <span class="ck">@media</span> (<span class="cp">prefers-color-scheme</span>: <span class="cv">dark</span>) {
+<span class="ln">25</span>    <span class="cs">body</span> { <span class="cp">background</span>: <span class="cc">#0d1117</span>; <span class="cp">color</span>: <span class="cc">#e6edf3</span>; }
+<span class="ln">26</span>  }
+<span class="ln">27</span>
+<span class="ln">28</span>  <span class="cmt">/* For accessibility: reduced motion */</span>
+<span class="ln">29</span>  <span class="ck">@media</span> (<span class="cp">prefers-reduced-motion</span>: <span class="cv">reduce</span>) {
+<span class="ln">30</span>    <span class="cs">*</span> { <span class="cp">animation</span>: <span class="cv">none</span> <span class="cv">!important</span>; }
+<span class="ln">31</span>  }</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- CHEAT SHEET -->
+    <section style="background: var(--bg2)">
+      <div class="section reveal">
+        <div class="section-label">🎁 Bonus</div>
+        <h2 class="section-title">
+          The Ultimate <span class="text-green">Cheat Sheet</span>
+        </h2>
+        <p class="section-desc">
+          The 20% of CSS you'll use 80% of the time. Bookmark this. Screenshot
+          it. Tattoo it. Your call.
+        </p>
+
+        <div class="code-window">
+          <div class="code-titlebar">
+            <div class="code-dots">
+              <div class="dot dot-r"></div>
+              <div class="dot dot-y"></div>
+              <div class="dot dot-g"></div>
+            </div>
+            <div class="code-filename">
+              ⭐ master-cheatsheet.css — Save this file!
+            </div>
+            <div class="code-lang-badge">CSS</div>
+          </div>
+          <div class="code-body">
+            <pre><span class="ln"> 1</span>  <span class="cmt">/* ─── RESET ─────────────────────────────────── */</span>
+<span class="ln"> 2</span>  <span class="cs">*</span> { <span class="cp">margin</span>: <span class="cn">0</span>; <span class="cp">padding</span>: <span class="cn">0</span>; <span class="cp">box-sizing</span>: <span class="cv">border-box</span>; }
+<span class="ln"> 3</span>
+<span class="ln"> 4</span>  <span class="cmt">/* ─── CENTER ANYTHING ────────────────────────── */</span>
+<span class="ln"> 5</span>  <span class="cs">.center</span> { <span class="cp">display</span>:<span class="cv">flex</span>; <span class="cp">justify-content</span>:<span class="cv">center</span>; <span class="cp">align-items</span>:<span class="cv">center</span>; }
+<span class="ln"> 6</span>
+<span class="ln"> 7</span>  <span class="cmt">/* ─── FULL VIEWPORT ─────────────────────────── */</span>
+<span class="ln"> 8</span>  <span class="cs">.hero</span> { <span class="cp">min-height</span>: <span class="cn">100vh</span>; <span class="cp">width</span>: <span class="cn">100%</span>; }
+<span class="ln"> 9</span>
+<span class="ln">10</span>  <span class="cmt">/* ─── RESPONSIVE IMAGE ───────────────────────── */</span>
+<span class="ln">11</span>  <span class="cs">img</span> { <span class="cp">max-width</span>: <span class="cn">100%</span>; <span class="cp">height</span>: <span class="cv">auto</span>; }
+<span class="ln">12</span>
+<span class="ln">13</span>  <span class="cmt">/* ─── TRUNCATE TEXT ─────────────────────────── */</span>
+<span class="ln">14</span>  <span class="cs">.truncate</span> { <span class="cp">white-space</span>:<span class="cv">nowrap</span>; <span class="cp">overflow</span>:<span class="cv">hidden</span>; <span class="cp">text-overflow</span>:<span class="cv">ellipsis</span>; }
+<span class="ln">15</span>
+<span class="ln">16</span>  <span class="cmt">/* ─── CIRCLE ─────────────────────────────────── */</span>
+<span class="ln">17</span>  <span class="cs">.circle</span> { <span class="cp">border-radius</span>: <span class="cn">50%</span>; }
+<span class="ln">18</span>
+<span class="ln">19</span>  <span class="cmt">/* ─── SMOOTH SCROLL ─────────────────────────── */</span>
+<span class="ln">20</span>  <span class="cs">html</span> { <span class="cp">scroll-behavior</span>: <span class="cv">smooth</span>; }
+<span class="ln">21</span>
+<span class="ln">22</span>  <span class="cmt">/* ─── STICKY HEADER ─────────────────────────── */</span>
+<span class="ln">23</span>  <span class="cs">header</span> { <span class="cp">position</span>:<span class="cv">sticky</span>; <span class="cp">top</span>:<span class="cn">0</span>; <span class="cp">z-index</span>:<span class="cn">100</span>; }
+<span class="ln">24</span>
+<span class="ln">25</span>  <span class="cmt">/* ─── GRADIENT TEXT ──────────────────────────── */</span>
+<span class="ln">26</span>  <span class="cs">.gradient-text</span> {
+<span class="ln">27</span>    <span class="cp">background</span>: <span class="cv">linear-gradient</span>(<span class="cn">135deg</span>, <span class="cc">#79c0ff</span>, <span class="cc">#d2a8ff</span>);
+<span class="ln">28</span>    <span class="cp">-webkit-background-clip</span>: <span class="cv">text</span>;
+<span class="ln">29</span>    <span class="cp">-webkit-text-fill-color</span>: <span class="cv">transparent</span>;
+<span class="ln">30</span>  }
+<span class="ln">31</span>
+<span class="ln">32</span>  <span class="cmt">/* ─── GLASSMORPHISM ─────────────────────────── */</span>
+<span class="ln">33</span>  <span class="cs">.glass</span> {
+<span class="ln">34</span>    <span class="cp">background</span>: <span class="cv">rgba</span>(<span class="cn">255,255,255,0.1</span>);
+<span class="ln">35</span>    <span class="cp">backdrop-filter</span>: <span class="cv">blur</span>(<span class="cn">10px</span>);
+<span class="ln">36</span>    <span class="cp">border</span>: <span class="cn">1px</span> <span class="cv">solid</span> <span class="cv">rgba</span>(<span class="cn">255,255,255,0.2</span>);
+<span class="ln">37</span>  }
+<span class="ln">38</span>
+<span class="ln">39</span>  <span class="cmt">/* ─── REMOVE BUTTON DEFAULTS ─────────────────── */</span>
+<span class="ln">40</span>  <span class="cs">button</span> { <span class="cp">border</span>:<span class="cv">none</span>; <span class="cp">background</span>:<span class="cv">none</span>; <span class="cp">cursor</span>:<span class="cv">pointer</span>; <span class="cp">font</span>:<span class="cv">inherit</span>; }
+<span class="ln">41</span>
+<span class="ln">42</span>  <span class="cmt">/* ─── VISUALLY HIDDEN (accessible) ──────────── */</span>
+<span class="ln">43</span>  <span class="cs">.sr-only</span> { <span class="cp">position</span>:<span class="cv">absolute</span>; <span class="cp">width</span>:<span class="cn">1px</span>; <span class="cp">clip</span>:<span class="cv">rect</span>(<span class="cn">0,0,0,0</span>); }</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <h3>🎉 You've reached the end!</h3>
+      <p style="margin-top: 8px">
+        You went from zero CSS knowledge to flex/grid/animations/variables.
+        That's huge. Now go build something beautiful! 🚀
+      </p>
+      <p style="margin-top: 12px; font-size: 14px; color: var(--muted)">
+        The best way to learn CSS is to break things. Experiment. Break more
+        things. Then fix them. Repeat. 🔨
+      </p>
+      <div class="footer-tags">
+        <span class="footer-tag">#css</span>
+        <span class="footer-tag">#webdev</span>
+        <span class="footer-tag">#frontend</span>
+        <span class="footer-tag">#selectors</span>
+        <span class="footer-tag">#flexbox</span>
+        <span class="footer-tag">#cssgrid</span>
+        <span class="footer-tag">#animations</span>
+        <span class="footer-tag">#beginners</span>
+        <span class="footer-tag">#responsive</span>
+        <span class="footer-tag">#darkmode</span>
+      </div>
+      <p style="margin-top: 32px; font-size: 13px; color: var(--muted)">
+        Made with 💙 CSS · Open in any browser · No frameworks needed
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
