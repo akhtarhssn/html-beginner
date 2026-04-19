@@ -1,0 +1,51 @@
+/* universal selector*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* class selector */
+.my-class {
+  color: white;
+  background-color: green;
+  padding: 30px;
+  margin: 30px;
+  font-size: 20px;
+}
+.my-form {
+  background-color: skyblue;
+  padding: 30px;
+}
+
+/* id selector */
+#number-three {
+  color: green;
+  background-color: lightgrey;
+  padding: 30px;
+  margin: 10px;
+}
+
+/* grouping selector */
+#number-one,
+#number-two,
+#number-three {
+  color: green;
+  background-color: lightgrey;
+  padding: 30px;
+  margin: 10px;
+}
+
+/* element selector */
+h1 {
+  color: antiquewhite;
+  background-color: black;
+  padding: 30px;
+}
+input {
+  padding: 10px;
+}
+
+/*attribute selector*/
+input[type="password"] {
+  background-color: mediumvioletred;
+}
